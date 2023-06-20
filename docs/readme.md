@@ -125,3 +125,118 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE END Callback 1 */
 }
 ```
+
+
+## 读取解析IMU数据
+我们通过STM32CubeMX配置IMU串口和FreeRTOS，在DMA中断回调函数中使用双缓冲接收串口数据，并通过任务通知将接收到的数据传递给IMUDecoder任务来进行解析。
+IMUDecoder任务函数：
+```c++
+void IMUDecoder(void *argument)
+{
+  /* USER CODE BEGIN IMUDecoder */
+    imuTaskHandle = xTaskGetCurrentTaskHandle(); //将当前任务句柄送给imu
+    /* Infinite loop */
+    for(uint32_t cnt = 0; ; ++cnt)
+    {
+        if (HAL_UART_STATE_READY == HAL_UART_GetState(&huart2)) {
+            HAL_UART_Receive_DMA(&huart2, imuRecvBuff, 128); //开启imu串口通信
+        }
+
+        uint32_t value = 0;
+        if (pdTRUE == xTaskNotifyWait(0, 0xffffffff, &value, pdMS_TO_TICKS(100)) && value == 0x12345678) {
+            while (!DecodeIMUPackage()) {} //解析imu数据包
+        }
+        osDelay(1);
+    }
+
+  /* USER CODE END IMUDecoder */
+}
+```
+通过串口传输完一半和传输完回调函数实现双缓冲。  
+DMA中断回调函数：
+```c++
+void IMU_RxHalfCpltCallback()
+{
+    imuPackage = imuRecvBuff + 0;
+    //通知解析imu任务
+    BaseType_t flag = 0;
+    xTaskNotifyFromISR(imuTaskHandle, 0x12345678, eSetValueWithOverwrite, &flag);
+    portYIELD_FROM_ISR(flag);
+}
+
+void IMU_RxCpltCallback()
+{
+    imuPackage = imuRecvBuff + 64;
+    //通知解析imu任务
+    BaseType_t flag = 0;
+    xTaskNotifyFromISR(imuTaskHandle, 0x12345678, eSetValueWithOverwrite, &flag);
+    portYIELD_FROM_ISR(flag);
+}
+```
+IMU解析函数：
+```c++
+int DecodeIMUPackage()
+{
+    if (imuPackage) {
+        if (imuBuffOffset + 64 >= 1024) imuBuffOffset = 0;
+        memcpy(imuBuff + imuBuffOffset, imuPackage, 64);
+        imuBuffOffset += 64;
+        imuPackage = 0;
+    }
+    //定位帧头
+    int packageStart = 0;
+    int flag = 0;
+    for (; imuBuffOffset > 5 && packageStart < imuBuffOffset - 4; ++packageStart) {
+        uint8_t crc8 = CRC8_Table(imuBuff + packageStart, 4);
+
+        if (imuBuff[packageStart] == 0xFC && crc8 == imuBuff[packageStart + 4]) {
+            flag = 1;
+            break;
+        }
+    }
+    //将帧头移动到起始位置
+    if (flag) {
+        memcpy(imuBuff, imuBuff + packageStart, imuBuffOffset - packageStart);
+        imuBuffOffset -= packageStart;
+    }
+
+    int flag2 = 0;
+
+    //判断帧头
+    uint8_t crc8 = CRC8_Table(imuBuff, 4);
+    if (imuBuff[0] == 0xFC && crc8 == imuBuff[4]) { //是帧头
+        int cmd = imuBuff[1]; //指令类别
+        int dataLen = imuBuff[2]; //数据长度
+
+        //判断是否接收完整个数据
+        if (imuBuffOffset >= 5 + 2 + dataLen + 1) { //5->帧头 2->crc16 1->帧尾标记
+            uint16_t crc16FromBuff = (imuBuff[5] << 8) | imuBuff[6];
+            uint16_t crc16 = CRC16_Table(imuBuff + 7, dataLen);
+
+            if (crc16 == crc16FromBuff) {
+                HandleIMUPackage(cmd, imuBuff + 7, dataLen);
+                flag2 = 1;
+            }
+
+            int frameLen = 5 + 2 + dataLen + 1;
+            memcpy(imuBuff, imuBuff + frameLen, imuBuffOffset - frameLen);
+            imuBuffOffset -= frameLen;
+        }
+    }
+    return flag2;
+}
+```
+将IMU传感器数据发送给上位机
+```c++
+char message[128] = {0};
+snprintf(message, 128, "[imu]heading:%.4f pitch:%.4f roll:%.4f\r\n", robotIMU.heading, robotIMU.pitch, robotIMU.roll);
+HAL_UART_Transmit(&huart1, message, strlen(message), 100);
+```
+上位机接收到的数据示例：
+```python
+[imu]heading:5.6123 pitch:0.0045 roll:0.0247                                    
+[imu]heading:5.6419 pitch:0.0047 roll:0.0246                                    
+[imu]heading:5.6761 pitch:0.0048 roll:0.0245                                    
+[imu]heading:5.7051 pitch:0.0049 roll:0.0242                                    
+[imu]heading:5.7284 pitch:0.0051 roll:0.0239    
+```

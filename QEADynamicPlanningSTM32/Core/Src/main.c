@@ -30,6 +30,7 @@
 #include "string.h"
 #include "stdio.h"
 #include "wheel_pwm.h"
+#include "imu.h"
 
 /* USER CODE END Includes */
 
@@ -63,6 +64,23 @@ void MX_FREERTOS_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef* huart)
+{
+    if (huart->Instance == USART2) {
+        IMU_RxHalfCpltCallback();
+    }
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart)
+{
+    if (huart->Instance == USART2) {
+        IMU_RxCpltCallback();
+    } else if (huart->Instance == USART1) {
+//        Robot_RxCpltCallback();
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -92,8 +110,8 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
   MX_DMA_Init();
+  MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_TIM3_Init();

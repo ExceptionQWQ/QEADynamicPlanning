@@ -111,6 +111,9 @@
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/gpio.h">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/imu.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/main.h">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
@@ -136,6 +139,9 @@
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/gpio.c">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/imu.c">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/main.c">

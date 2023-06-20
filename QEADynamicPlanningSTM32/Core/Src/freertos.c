@@ -26,6 +26,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "stdio.h"
+#include "string.h"
+#include "imu.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,7 +55,14 @@
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 128 * 4,
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for imuDecoder */
+osThreadId_t imuDecoderHandle;
+const osThreadAttr_t imuDecoder_attributes = {
+  .name = "imuDecoder",
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 
@@ -61,6 +72,7 @@ const osThreadAttr_t defaultTask_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
+void IMUDecoder(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -94,6 +106,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
+  /* creation of imuDecoder */
+  imuDecoderHandle = osThreadNew(IMUDecoder, NULL, &imuDecoder_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -117,9 +132,40 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+      char message[128] = {0};
+      snprintf(message, 128, "[imu]heading:%.4f pitch:%.4f roll:%.4f\r\n", robotIMU.heading, robotIMU.pitch, robotIMU.roll);
+      HAL_UART_Transmit(&huart1, message, strlen(message), 100);
+    osDelay(100);
   }
   /* USER CODE END StartDefaultTask */
+}
+
+/* USER CODE BEGIN Header_IMUDecoder */
+/**
+* @brief Function implementing the imuDecoder thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_IMUDecoder */
+void IMUDecoder(void *argument)
+{
+  /* USER CODE BEGIN IMUDecoder */
+    imuTaskHandle = xTaskGetCurrentTaskHandle(); //将当前任务句柄送给imu
+    /* Infinite loop */
+    for(uint32_t cnt = 0; ; ++cnt)
+    {
+        if (HAL_UART_STATE_READY == HAL_UART_GetState(&huart2)) {
+            HAL_UART_Receive_DMA(&huart2, imuRecvBuff, 128); //开启imu串口通信
+        }
+
+        uint32_t value = 0;
+        if (pdTRUE == xTaskNotifyWait(0, 0xffffffff, &value, pdMS_TO_TICKS(100)) && value == 0x12345678) {
+            while (!DecodeIMUPackage()) {} //解析imu数据包
+        }
+        osDelay(1);
+    }
+
+  /* USER CODE END IMUDecoder */
 }
 
 /* Private application code --------------------------------------------------*/

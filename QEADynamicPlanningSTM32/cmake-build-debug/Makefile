@@ -223,6 +223,33 @@ Core/Src/gpio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.s
 .PHONY : Core/Src/gpio.c.s
 
+Core/Src/imu.obj: Core/Src/imu.c.obj
+
+.PHONY : Core/Src/imu.obj
+
+# target to build an object file
+Core/Src/imu.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/imu.c.obj
+.PHONY : Core/Src/imu.c.obj
+
+Core/Src/imu.i: Core/Src/imu.c.i
+
+.PHONY : Core/Src/imu.i
+
+# target to preprocess a source file
+Core/Src/imu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/imu.c.i
+.PHONY : Core/Src/imu.c.i
+
+Core/Src/imu.s: Core/Src/imu.c.s
+
+.PHONY : Core/Src/imu.s
+
+# target to generate assembly for a file
+Core/Src/imu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/imu.c.s
+.PHONY : Core/Src/imu.c.s
+
 Core/Src/main.obj: Core/Src/main.c.obj
 
 .PHONY : Core/Src/main.obj
@@ -1168,6 +1195,9 @@ help:
 	@echo "... Core/Src/gpio.obj"
 	@echo "... Core/Src/gpio.i"
 	@echo "... Core/Src/gpio.s"
+	@echo "... Core/Src/imu.obj"
+	@echo "... Core/Src/imu.i"
+	@echo "... Core/Src/imu.s"
 	@echo "... Core/Src/main.obj"
 	@echo "... Core/Src/main.i"
 	@echo "... Core/Src/main.s"

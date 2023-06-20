@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.cpp
+gradient.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.h
+
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.h
 sim.h
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h

@@ -1025,7 +1025,7 @@ cv::waitKey(0);
 ![Alt text](image-3.png)
 ![Alt text](image-4.png)
 
-## 绘制梯度图像
+## 由标量场绘制梯度图像
 
 ```c++
 /*
@@ -1145,3 +1145,117 @@ cv::waitKey(0);
 梯度图像绘制结果
 ![Alt text](image-6.png)
 
+## 绘制梯度场
+
+计算梯度
+```c++
+std::pair<double, double> QOBJ::GetGradient(double x, double y) const
+{
+    double tx = x - xPos, ty = y - yPos;
+    double sb = std::pow(std::sqrt(std::pow(tx, 2) + std::pow(ty, 2)), 3);
+    double partialQOverpartialX = k * q * tx / sb;
+    double partialQOverpartialY = k * q * ty / sb;
+    return std::make_pair(partialQOverpartialX, partialQOverpartialY);
+}
+```
+```c++
+/*
+ * @brief 由qobj生成梯度场
+ * @param qobjs 电荷对象
+ * @param fieldSz 场大小
+ * @param scale 缩放
+ * @param offset 偏移
+ */
+cv::Mat GenerateGradientField(const std::vector<QOBJ>& qobjs, cv::Size fieldSz, double scale, cv::Point offset)
+{
+    cv::Mat field = cv::Mat::zeros(fieldSz, CV_32FC2);
+    for (int x = 0; x < field.cols; ++x) {
+        for (int y = 0; y < field.rows; ++y) {
+            int tx = x * scale + offset.x;
+            int ty = y * scale + offset.y;
+            std::pair<float, float> dxy = {};
+            for (size_t qindex = 0; qindex != qobjs.size(); ++qindex) {
+                auto grad = qobjs[qindex].GetGradient(tx, ty);
+                dxy.first += grad.first; dxy.second += grad.second;
+            }
+            field.at<cv::Vec2f>(y, x) = cv::Vec2f(dxy.first, dxy.second);
+        }
+    }
+    return field;
+}
+```
+```c++
+/*
+ * @brief 显示向量场
+ * @param vectorField 向量场
+ * @param color 颜色
+ */
+cv::Mat GetViewFromVectorsField(cv::Mat vectorField, cv::Scalar color)
+{
+    cv::Mat view = cv::Mat::zeros(vectorField.size(), CV_8UC3);
+    int stepX = view.cols / 30, stepY = view.rows / 30;
+
+    for (int x = 0; x < view.cols; x += stepX) {
+        for (int y = 0; y < view.rows; y += stepY) {
+            cv::Vec2f dxy = vectorField.at<cv::Vec2f>(y, x);
+            DrawVector(view, cv::Point(x, y), cv::Vec2f(dxy[0], dxy[1]), color, 1);
+        }
+    }
+
+    return view;
+}
+```
+测试梯度场显示效果
+```c++
+QOBJ qobj1(100, 100, 100); //在（100，100）放置q=100的电荷
+QOBJ qobj2(-400, 200, 400); //在（200，400）放置q=-400的电荷
+//生成梯度场
+cv::Mat field = GenerateGradientField({qobj1, qobj2}, cv::Size(512, 512));
+//获取梯度场的图像
+cv::Mat fieldView = GetViewFromVectorsField(field, cv::Scalar(255, 255, 0));
+
+// cv::imshow("field", field); //这里无法直接显示梯度场
+cv::imshow("fieldView", fieldView); 
+cv::waitKey(0);
+```
+梯度场显示效果
+![Alt text](image-7.png)
+
+## 优化
+显示梯度图像的时候其实没必要把每个点的梯度都计算出来，只需要计算取样的点即可。
+
+由qobjs计算梯度
+```c++
+std::pair<double, double> CalcQOBJSGradient(const std::vector<QOBJ>& qobjs, int x, int y)
+{
+    std::pair<float, float> dxy = {};
+    for (size_t qindex = 0; qindex != qobjs.size(); ++qindex) {
+        auto grad = qobjs[qindex].GetGradient(x, y);
+        dxy.first += grad.first; dxy.second += grad.second;
+    }
+    return dxy;
+}
+```
+优化后的显示梯度场的代码
+```c++
+/*
+ * @brief 显示向量场
+ * @param qobjs 电荷对象
+ * @param viewSz 图像大小
+ * @param color 颜色
+ */
+cv::Mat GetGradientViewFromQOBJ(const std::vector<QOBJ>& qobjs, cv::Size viewSz,cv::Scalar color)
+{
+    cv::Mat view = cv::Mat::zeros(viewSz, CV_8UC3);
+    int stepX = view.cols / 30, stepY = view.rows / 30;
+
+    for (int x = 0; x < view.cols; x += stepX) {
+        for (int y = 0; y < view.rows; y += stepY) {
+            auto dxy = CalcQOBJSGradient(qobjs, x, y);
+            DrawVector(view, cv::Point(x, y), cv::Vec2f(dxy.first, dxy.second), color, 1);
+        }
+    }
+
+    return view;
+}
+```

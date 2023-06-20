@@ -1396,3 +1396,140 @@ cv::Mat view = cv::Mat::zeros(cv::Size(1024, 1024), CV_8UC3);
 ```
 路径规划结果
 ![Alt text](image-9.png)
+
+## 激光雷达建图
+我们首先需要确定机器向前行驶1米对应的编码器脉冲数，我们首先随机指定编码器脉冲，然后通过二分查找，找到能让机器准确行驶1米的脉冲数。经过测试，1米对应的脉冲数为438000, 也就是说给脉冲数438，机器就能向前行驶1毫米。
+
+```c++
+#define ROBOT_MM_TO_PULSE 438 //1毫米对应的脉冲数
+```
+接着，我们修改控制机器人向前行驶的函数，在函数开头将毫米转换成脉冲数。这样就能精准控制小车向前行驶一定的距离。
+```c++
+void Robot_MoveForward(double speed, double dis)
+{
+    dis *= ROBOT_MM_TO_PULSE; //将毫米转换成脉冲数
+    motionOK = false;
+    char message[128] = {0};
+    snprintf(message, 128, "[forward]speed=%.4lf dis=%.4lf\n", speed, dis);
+    std::cout << message << std::endl;
+    serialPuts(robotSerial, message);
+    while (!motionOK) {
+        usleep(1000);
+    }
+}
+```
+
+```c++
+class Mapping
+{
+private:
+    cv::Mat view;
+    cv::Size sz;
+    cv::Point offset;
+    double scale;
+    cv::Scalar color;
+    double xPos = 0;
+    double yPos = 0;
+    double heading = 0;
+public:
+
+    Mapping(cv::Size viewSz, cv::Point mapOffset = {0, 0}, double mapScale = 1.0) : sz{viewSz}, offset{mapOffset}, scale{mapScale} 
+    {
+        view = cv::Mat::zeros(sz, CV_8UC3);
+    }
+    void SetColor(cv::Scalar color);
+    void SetRobotPos(double x, double y);
+    void SetRobotHeading(double heading);
+    void UpdateLidarPoints(const std::vector<LidarPointData>& points);
+    cv::Mat GetMapView();
+};
+```
+
+```c++
+void Mapping::SetColor(cv::Scalar color)
+{
+    this->color = color;
+}
+```
+
+```c++
+void Mapping::SetRobotPos(double x, double y)
+{
+    this->xPos = x;
+    this->yPos = y;
+}
+```
+
+```c++
+void Mapping::SetRobotHeading(double heading)
+{
+    this->heading = heading;
+}
+```
+
+```c++
+cv::Mat Mapping::GetMapView()
+{
+    cv::Mat mapView = view.clone();
+    cv::flip(mapView, mapView, 0);
+    return mapView;
+}
+```
+
+```c++
+void Mapping::UpdateLidarPoints(const std::vector<LidarPointData>& points)
+{
+    for (size_t index = 0; index != points.size(); ++index) {
+        double x = (xPos + points[index].distance * std::cos(PI / 180 * points[index].angle + heading)) * scale + offset.x;
+        double y = (yPos + points[index].distance * std::sin(PI / 180 * points[index].angle + heading)) * scale + offset.y;
+        cv::circle(view, cv::Point(x, y), 3, color, -1);
+    }
+}
+```
+
+```c++
+    Mapping mapping(cv::Size(800, 800), {700, 700}, 0.4);
+	mapping.SetColor({0, 255, 0});
+
+	while (true) {
+		char ch;
+		std::cin >> ch;
+		double radian = robotInfo.heading;
+		switch (ch) {
+			case 'w':
+				if (Robot_MoveForward(30, 50)) {
+					robotInfo.xPos += 50 * std::cos(robotInfo.heading);
+					robotInfo.yPos += 50 * std::sin(robotInfo.heading);
+				}
+			break;
+			case 's':
+				if (Robot_MoveBackward(30, 50)) {
+					robotInfo.xPos += -50 * std::cos(robotInfo.heading);
+					robotInfo.yPos += -50 * std::sin(robotInfo.heading);
+				}
+			break;
+			case 'a':
+				radian += 0.2;
+				radian = std::fmod(radian + 2 * PI, 2 * PI);
+				Robot_SpinTo(60, radian);
+			break;
+			case 'd':
+				radian -= 0.2;
+				radian = std::fmod(radian + 2 * PI, 2 * PI);
+				Robot_SpinTo(60, radian);
+			break;
+			case 'm':
+				mapping.SetRobotPos(robotInfo.xPos, robotInfo.yPos);
+				mapping.SetRobotHeading(robotInfo.heading);
+				auto points = GetPointData();
+				mapping.UpdateLidarPoints(points);
+				
+				cv::Mat mappingView = mapping.GetMapView();
+				cv::imshow("mappingView", mappingView);
+				cv::waitKey(500);
+			break;
+		}
+	}
+```
+建图结果
+![Alt text](image-10.png)

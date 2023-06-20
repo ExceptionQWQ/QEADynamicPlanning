@@ -108,9 +108,10 @@ void MoveBackwardWithDis(double speed, double dis)
  */
 void SpinTo(double speed, double radian)
 {
+    radian = fmod(radian + 2 * PI, 2 * PI);
     while (1) {
         double dr = fabs(radian - robotIMU.heading);
-        if (dr < 0.001) break;
+        if (dr < 0.01) break;
         double maxSpeed = speed;
         double speed = dr * 140;
         if (speed > maxSpeed) speed = maxSpeed;

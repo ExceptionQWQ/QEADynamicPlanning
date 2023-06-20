@@ -234,6 +234,13 @@ void RobotController(void *argument)
         xMessageBufferReceive(messageBufferHandle, message, 128, portMAX_DELAY);
 
         if (startsWith(message, "[forward]")) {
+            portENTER_CRITICAL();
+            char msgHello[] = "[motion]Hello\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgHello, strlen(msgHello), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+
             double speed, dis;
             sscanf(message, "[forward]speed=%lf dis=%lf", &speed, &dis);
             MoveForwardWithDis(speed, dis);
@@ -246,6 +253,13 @@ void RobotController(void *argument)
             xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
             portEXIT_CRITICAL();
         } else if (startsWith(message, "[backward]")) {
+            portENTER_CRITICAL();
+            char msgHello[] = "[motion]Hello\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgHello, strlen(msgHello), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+
             double speed, dis;
             sscanf(message, "[backward]speed=%lf dis=%lf", &speed, &dis);
             MoveBackwardWithDis(speed, dis);
@@ -258,6 +272,13 @@ void RobotController(void *argument)
             xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
             portEXIT_CRITICAL();
         } else if (startsWith(message, "[spin]")) {
+            portENTER_CRITICAL();
+            char msgHello[] = "[motion]Hello\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgHello, strlen(msgHello), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+
             double speed, radian;
             sscanf(message, "[spin]speed=%lf radian=%lf", &speed, &radian);
             SpinTo(speed, radian);

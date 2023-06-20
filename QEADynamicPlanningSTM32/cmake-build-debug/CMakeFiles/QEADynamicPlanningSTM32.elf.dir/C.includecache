@@ -44,6 +44,32 @@ math.h
 
 ../Core/Inc/pid.h
 
+../Core/Inc/robot.h
+main.h
+../Core/Inc/main.h
+usart.h
+../Core/Inc/usart.h
+stdio.h
+../Core/Inc/stdio.h
+string.h
+../Core/Inc/string.h
+FreeRTOS.h
+../Core/Inc/FreeRTOS.h
+task.h
+../Core/Inc/task.h
+cmsis_os.h
+../Core/Inc/cmsis_os.h
+semphr.h
+../Core/Inc/semphr.h
+math.h
+../Core/Inc/math.h
+imu.h
+../Core/Inc/imu.h
+message_buffer.h
+../Core/Inc/message_buffer.h
+motion.h
+../Core/Inc/motion.h
+
 ../Core/Inc/stm32f1xx_hal_conf.h
 stm32f1xx_hal_rcc.h
 ../Core/Inc/stm32f1xx_hal_rcc.h
@@ -438,6 +464,10 @@ portmacro.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 
+../Middlewares/Third_Party/FreeRTOS/Source/include/message_buffer.h
+stream_buffer.h
+../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h
+
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -449,6 +479,14 @@ mpu_wrappers.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+queue.h
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 list.h
@@ -473,4 +511,6 @@ imu.h
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/imu.h
 motion.h
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/motion.h
+robot.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/robot.h
 

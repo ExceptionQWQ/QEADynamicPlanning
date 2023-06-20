@@ -123,6 +123,9 @@
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/pid.h">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/robot.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/stm32f1xx_hal_conf.h">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
@@ -157,6 +160,9 @@
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/pid.c">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/robot.c">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/stm32f1xx_hal_msp.c">

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/QEADynamicPlanningRaspi/qea.cpp
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
+robot.h
+/home/pi/QEADynamicPlanningRaspi/robot.h
+
+/home/pi/QEADynamicPlanningRaspi/qea.h
+iostream
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+cmath
+-
+unistd.h
+-
+memory.h
+-
+wiringSerial.h
+-
+
+/home/pi/QEADynamicPlanningRaspi/robot.h
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
+

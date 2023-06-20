@@ -1,0 +1,3 @@
+/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles/rebuild_cache.dir
+/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles/edit_cache.dir
+/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles/qea.dir

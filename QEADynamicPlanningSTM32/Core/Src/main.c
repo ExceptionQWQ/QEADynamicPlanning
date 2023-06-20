@@ -33,6 +33,7 @@
 #include "wheel_pwm.h"
 #include "imu.h"
 #include "motion.h"
+#include "robot.h"
 
 /* USER CODE END Includes */
 
@@ -79,7 +80,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart)
     if (huart->Instance == USART2) {
         IMU_RxCpltCallback();
     } else if (huart->Instance == USART1) {
-//        Robot_RxCpltCallback();
+        Robot_RxCpltCallback();
     }
 }
 

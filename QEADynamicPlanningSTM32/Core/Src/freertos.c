@@ -30,6 +30,7 @@
 #include "string.h"
 #include "imu.h"
 #include "motion.h"
+#include "robot.h"
 
 /* USER CODE END Includes */
 
@@ -73,9 +74,26 @@ const osThreadAttr_t robotController_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for debugUartMutex */
+osMutexId_t debugUartMutexHandle;
+const osMutexAttr_t debugUartMutex_attributes = {
+  .name = "debugUartMutex"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
+
+
+int startsWith(const char* str1, const char* str2)
+{
+    int len1 = strlen(str1), len2 = strlen(str2);
+    if (len1 < len2) return 0;
+    for (int i = 0; i < len2; ++i) {
+        if (str1[i] != str2[i]) return 0;
+    }
+    return 1;
+}
+
 
 /* USER CODE END FunctionPrototypes */
 
@@ -94,6 +112,9 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
+  /* Create the mutex(es) */
+  /* creation of debugUartMutex */
+  debugUartMutexHandle = osMutexNew(&debugUartMutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -109,6 +130,10 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+
+  messageBufferHandle = xMessageBufferCreate(1024);
+
+
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -144,9 +169,17 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
+      portENTER_CRITICAL(); //进入临界代码段
+
       char message[128] = {0};
-      snprintf(message, 128, "[imu]heading:%.4f pitch:%.4f roll:%.4f\r\n", robotIMU.heading, robotIMU.pitch, robotIMU.roll);
+      snprintf(message, 128, "[imu]heading:%.4lf pitch:%.4lf roll:%.4lf\r\n", robotIMU.heading, robotIMU.pitch, robotIMU.roll);
+      xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
       HAL_UART_Transmit(&huart1, message, strlen(message), 100);
+      xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+
+      portEXIT_CRITICAL();
+
+
     osDelay(100);
   }
   /* USER CODE END StartDefaultTask */
@@ -191,23 +224,56 @@ void RobotController(void *argument)
 {
   /* USER CODE BEGIN RobotController */
   /* Infinite loop */
-
     osDelay(1000);
 
-    MoveForwardWithDis(30, 30000);
-    MoveBackwardWithDis(60, 30000);
-    MoveForwardWithDis(30, 30000);
+    HAL_UART_Receive_IT(&huart1, robotRecvBuff + robotRecvOffset, 1);
+    /* Infinite loop */
+    for(;;)
+    {
+        char message[128] = {0};
+        xMessageBufferReceive(messageBufferHandle, message, 128, portMAX_DELAY);
+
+        if (startsWith(message, "[forward]")) {
+            double speed, dis;
+            sscanf(message, "[forward]speed=%lf dis=%lf", &speed, &dis);
+            MoveForwardWithDis(speed, dis);
+
+            //移动结束发送OK
+            portENTER_CRITICAL();
+            char msgOK[] = "[motion]OK\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgOK, strlen(msgOK), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+        } else if (startsWith(message, "[backward]")) {
+            double speed, dis;
+            sscanf(message, "[backward]speed=%lf dis=%lf", &speed, &dis);
+            MoveBackwardWithDis(speed, dis);
+
+            //移动结束发送OK
+            portENTER_CRITICAL();
+            char msgOK[] = "[motion]OK\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgOK, strlen(msgOK), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+        } else if (startsWith(message, "[spin]")) {
+            double speed, radian;
+            sscanf(message, "[spin]speed=%lf radian=%lf", &speed, &radian);
+            SpinTo(speed, radian);
+
+            //移动结束发送OK
+            portENTER_CRITICAL();
+            char msgOK[] = "[motion]OK\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgOK, strlen(msgOK), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+        }
+        osDelay(1);
+    }
 
 
-    ClearSpeed();
-    CommitSpeed();
-
-
-
-  for(;;)
-  {
-    osDelay(1);
-  }
   /* USER CODE END RobotController */
 }
 

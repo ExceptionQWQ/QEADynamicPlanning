@@ -142,6 +142,33 @@ QEADynamicPlanningSTM32.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build
 .PHONY : QEADynamicPlanningSTM32.elf/fast
 
+Core/Src/dma.obj: Core/Src/dma.c.obj
+
+.PHONY : Core/Src/dma.obj
+
+# target to build an object file
+Core/Src/dma.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj
+.PHONY : Core/Src/dma.c.obj
+
+Core/Src/dma.i: Core/Src/dma.c.i
+
+.PHONY : Core/Src/dma.i
+
+# target to preprocess a source file
+Core/Src/dma.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.i
+.PHONY : Core/Src/dma.c.i
+
+Core/Src/dma.s: Core/Src/dma.c.s
+
+.PHONY : Core/Src/dma.s
+
+# target to generate assembly for a file
+Core/Src/dma.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.s
+.PHONY : Core/Src/dma.c.s
+
 Core/Src/freertos.obj: Core/Src/freertos.c.obj
 
 .PHONY : Core/Src/freertos.obj
@@ -384,6 +411,87 @@ Core/Src/system_stm32f1xx.s: Core/Src/system_stm32f1xx.c.s
 Core/Src/system_stm32f1xx.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.s
 .PHONY : Core/Src/system_stm32f1xx.c.s
+
+Core/Src/tim.obj: Core/Src/tim.c.obj
+
+.PHONY : Core/Src/tim.obj
+
+# target to build an object file
+Core/Src/tim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj
+.PHONY : Core/Src/tim.c.obj
+
+Core/Src/tim.i: Core/Src/tim.c.i
+
+.PHONY : Core/Src/tim.i
+
+# target to preprocess a source file
+Core/Src/tim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.i
+.PHONY : Core/Src/tim.c.i
+
+Core/Src/tim.s: Core/Src/tim.c.s
+
+.PHONY : Core/Src/tim.s
+
+# target to generate assembly for a file
+Core/Src/tim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.s
+.PHONY : Core/Src/tim.c.s
+
+Core/Src/usart.obj: Core/Src/usart.c.obj
+
+.PHONY : Core/Src/usart.obj
+
+# target to build an object file
+Core/Src/usart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj
+.PHONY : Core/Src/usart.c.obj
+
+Core/Src/usart.i: Core/Src/usart.c.i
+
+.PHONY : Core/Src/usart.i
+
+# target to preprocess a source file
+Core/Src/usart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.i
+.PHONY : Core/Src/usart.c.i
+
+Core/Src/usart.s: Core/Src/usart.c.s
+
+.PHONY : Core/Src/usart.s
+
+# target to generate assembly for a file
+Core/Src/usart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.s
+.PHONY : Core/Src/usart.c.s
+
+Core/Src/wheel_pwm.obj: Core/Src/wheel_pwm.c.obj
+
+.PHONY : Core/Src/wheel_pwm.obj
+
+# target to build an object file
+Core/Src/wheel_pwm.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj
+.PHONY : Core/Src/wheel_pwm.c.obj
+
+Core/Src/wheel_pwm.i: Core/Src/wheel_pwm.c.i
+
+.PHONY : Core/Src/wheel_pwm.i
+
+# target to preprocess a source file
+Core/Src/wheel_pwm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.i
+.PHONY : Core/Src/wheel_pwm.c.i
+
+Core/Src/wheel_pwm.s: Core/Src/wheel_pwm.c.s
+
+.PHONY : Core/Src/wheel_pwm.s
+
+# target to generate assembly for a file
+Core/Src/wheel_pwm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.s
+.PHONY : Core/Src/wheel_pwm.c.s
 
 Core/Startup/startup_stm32f103rctx.obj: Core/Startup/startup_stm32f103rctx.s.obj
 
@@ -745,6 +853,33 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
 
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.obj: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
+
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.obj
+
+# target to build an object file
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
+
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
+
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i
+
+# target to preprocess a source file
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
+
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
+
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s
+
+# target to generate assembly for a file
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
+
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj: Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
 
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj
@@ -1024,6 +1159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... QEADynamicPlanningSTM32.elf"
+	@echo "... Core/Src/dma.obj"
+	@echo "... Core/Src/dma.i"
+	@echo "... Core/Src/dma.s"
 	@echo "... Core/Src/freertos.obj"
 	@echo "... Core/Src/freertos.i"
 	@echo "... Core/Src/freertos.s"
@@ -1051,6 +1189,15 @@ help:
 	@echo "... Core/Src/system_stm32f1xx.obj"
 	@echo "... Core/Src/system_stm32f1xx.i"
 	@echo "... Core/Src/system_stm32f1xx.s"
+	@echo "... Core/Src/tim.obj"
+	@echo "... Core/Src/tim.i"
+	@echo "... Core/Src/tim.s"
+	@echo "... Core/Src/usart.obj"
+	@echo "... Core/Src/usart.i"
+	@echo "... Core/Src/usart.s"
+	@echo "... Core/Src/wheel_pwm.obj"
+	@echo "... Core/Src/wheel_pwm.i"
+	@echo "... Core/Src/wheel_pwm.s"
 	@echo "... Core/Startup/startup_stm32f103rctx.obj"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.obj"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.i"
@@ -1091,6 +1238,9 @@ help:
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.obj"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.i"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.s"
+	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.obj"
+	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i"
+	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.s"

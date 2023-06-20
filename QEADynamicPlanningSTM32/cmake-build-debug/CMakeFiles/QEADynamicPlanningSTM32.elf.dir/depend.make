@@ -3,6 +3,39 @@
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Startup/startup_stm32f103rctx.s.obj: ../Core/Startup/startup_stm32f103rctx.s
 
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Core/Inc/dma.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Core/Inc/main.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/cmsis_armcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/cmsis_armclang.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/cmsis_compiler.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/cmsis_gcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/cmsis_iccarm.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/cmsis_version.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/core_cm3.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/CMSIS/Include/mpu_armv7.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj: ../Core/Src/dma.c
+
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Core/Inc/FreeRTOSConfig.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Core/Inc/main.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -33,6 +66,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Drivers/S
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
@@ -75,12 +109,17 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj: ../Drivers/STM32
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj: ../Core/Src/gpio.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/FreeRTOSConfig.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/dma.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/gpio.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/main.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/usart.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Core/Inc/wheel_pwm.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
@@ -108,6 +147,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/STM32
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
@@ -147,6 +187,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj: ../
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj: ../Core/Src/stm32f1xx_hal_msp.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -177,6 +218,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c.obj: ../Core/Src/stm32f1xx_hal_timebase_tim.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj: ../Core/Inc/main.h
@@ -209,6 +251,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj: ../Drive
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj: ../Core/Src/stm32f1xx_it.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/syscalls.c.obj: ../Core/Src/syscalls.c
@@ -243,7 +286,108 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.obj: ../D
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.obj: ../Core/Src/system_stm32f1xx.c
+
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Core/Inc/main.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Core/Inc/tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/cmsis_armcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/cmsis_armclang.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/cmsis_compiler.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/cmsis_gcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/cmsis_iccarm.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/cmsis_version.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/core_cm3.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/CMSIS/Include/mpu_armv7.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj: ../Core/Src/tim.c
+
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Core/Inc/main.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Core/Inc/usart.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/cmsis_armcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/cmsis_armclang.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/cmsis_compiler.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/cmsis_gcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/cmsis_iccarm.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/cmsis_version.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/core_cm3.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/CMSIS/Include/mpu_armv7.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj: ../Core/Src/usart.c
+
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Core/Inc/main.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Core/Inc/tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Core/Inc/wheel_pwm.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/cmsis_armcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/cmsis_armclang.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/cmsis_compiler.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/cmsis_gcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/cmsis_iccarm.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/cmsis_version.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/core_cm3.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/CMSIS/Include/mpu_armv7.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj: ../Core/Src/wheel_pwm.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
@@ -273,6 +417,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -303,6 +448,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -333,6 +479,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -363,6 +510,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -393,6 +541,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -423,6 +572,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -453,6 +603,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -483,6 +634,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -513,6 +665,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -543,6 +696,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -573,6 +727,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -603,6 +758,7 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -633,7 +789,39 @@ CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm3
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
+
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Core/Inc/stm32f1xx_hal_conf.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/cmsis_armcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/cmsis_armclang.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/cmsis_compiler.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/cmsis_gcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/cmsis_iccarm.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/cmsis_version.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/core_cm3.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/CMSIS/Include/mpu_armv7.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
 
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: ../Core/Inc/FreeRTOSConfig.h
 CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: ../Drivers/CMSIS/Include/cmsis_armcc.h

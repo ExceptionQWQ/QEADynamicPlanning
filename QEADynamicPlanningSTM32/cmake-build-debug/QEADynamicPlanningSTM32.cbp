@@ -105,6 +105,9 @@
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/FreeRTOSConfig.h">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/dma.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/gpio.h">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
@@ -115,6 +118,18 @@
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/stm32f1xx_it.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/tim.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/usart.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Inc/wheel_pwm.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/dma.c">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/freertos.c">
@@ -142,6 +157,15 @@
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/system_stm32f1xx.c">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/tim.c">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/usart.c">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Src/wheel_pwm.c">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Core/Startup/startup_stm32f103rctx.s">
@@ -273,6 +297,9 @@
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Drivers/STM32F1xx_HAL_Driver/LICENSE.txt">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
@@ -313,6 +340,9 @@
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c">
+			<Option target="QEADynamicPlanningSTM32.elf"/>
+		</Unit>
+		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c">
 			<Option target="QEADynamicPlanningSTM32.elf"/>
 		</Unit>
 		<Unit filename="/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSTM32/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h">

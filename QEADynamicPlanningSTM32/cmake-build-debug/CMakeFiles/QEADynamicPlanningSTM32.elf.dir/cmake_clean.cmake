@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/dma.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/freertos.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj"
@@ -8,6 +9,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/syscalls.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/sysmem.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/system_stm32f1xx.c.obj"
+  "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/tim.c.obj"
+  "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/usart.c.obj"
+  "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/wheel_pwm.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Startup/startup_stm32f103rctx.s.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj"
@@ -22,6 +26,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj"
+  "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"

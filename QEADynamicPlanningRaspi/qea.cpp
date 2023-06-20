@@ -1,6 +1,7 @@
 #include "qea.h"
 #include "robot.h"
 #include "lidar.h"
+#include "view.h"
 
 int main(int argc, char** argv)
 {
@@ -13,11 +14,11 @@ int main(int argc, char** argv)
 	sleep(1);
 
 	while (true) {
-		sleep(1);
+		// sleep(1);
 		auto points = GetPointData();
-		for (size_t i = 0; i != points.size(); ++i) {
-			std::cout << points[i].angle << " " << (int)points[i].intensity << std::endl;
-		}
+		cv::Mat view = GetCloudView(points, cv::Size(512, 512), 0.3);
+		cv::imshow("view", view);
+		cv::waitKey(100);
 	}
 	
 	sleep(99999);

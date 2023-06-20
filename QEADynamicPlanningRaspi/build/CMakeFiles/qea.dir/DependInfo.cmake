@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pi/QEADynamicPlanningRaspi/lidar.cpp" "/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles/qea.dir/lidar.cpp.o"
   "/home/pi/QEADynamicPlanningRaspi/qea.cpp" "/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles/qea.dir/qea.cpp.o"
   "/home/pi/QEADynamicPlanningRaspi/robot.cpp" "/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles/qea.dir/robot.cpp.o"
+  "/home/pi/QEADynamicPlanningRaspi/view.cpp" "/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles/qea.dir/view.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

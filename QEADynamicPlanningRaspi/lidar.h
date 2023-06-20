@@ -1,16 +1,7 @@
 #ifndef LIDAR_H
 #define LIDAR_H
 
-#include <iostream>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstdint>
-#include <unistd.h>
-#include <memory.h>
-#include <vector>
-#include <queue>
-#include <wiringSerial.h>
+#include "qea.h"
 
 
 #define POINT_BUFF_SZ 360

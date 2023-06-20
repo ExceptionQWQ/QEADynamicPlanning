@@ -51,9 +51,9 @@ int DecodeLIDARPackage()
                 double angle = (liDarFrameTypeDef->start_angle + step * i) / 100.0;
                 angle = fmod(angle + 360, 360);
 
-                // angle = 360 - angle; //转换成逆时针方向
-                // angle += 90;
-                // angle = fmod(angle + 360, 360);
+                angle = 360 - angle; //转换成逆时针方向
+                angle += 90;
+                angle = fmod(angle + 360, 360);
 
                 int distance = liDarFrameTypeDef->point[i].distance;
                 uint8_t intensity = liDarFrameTypeDef->point[i].intensity;
@@ -111,7 +111,9 @@ std::vector<LidarPointData> GetPointData()
 {
     std::vector<LidarPointData> vec;
     for (int i = 0; i < POINT_BUFF_SZ; ++i) {
-        vec.push_back(lidarPointData[i]);
+        if (lidarPointData[i].intensity > 120) {
+            vec.push_back(lidarPointData[i]);
+        }
     }
     std::sort(std::begin(vec), std::end(vec), [](const auto& p1, const auto& p2) {
         return p1.angle < p2.angle;

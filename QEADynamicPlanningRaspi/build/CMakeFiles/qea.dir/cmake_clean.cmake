@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/qea.dir/lidar.cpp.o"
   "CMakeFiles/qea.dir/qea.cpp.o"
   "CMakeFiles/qea.dir/robot.cpp.o"
+  "CMakeFiles/qea.dir/view.cpp.o"
   "qea"
   "qea.pdb"
 )

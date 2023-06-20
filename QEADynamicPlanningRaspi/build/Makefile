@@ -223,6 +223,33 @@ robot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/robot.cpp.s
 .PHONY : robot.cpp.s
 
+view.o: view.cpp.o
+
+.PHONY : view.o
+
+# target to build an object file
+view.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/view.cpp.o
+.PHONY : view.cpp.o
+
+view.i: view.cpp.i
+
+.PHONY : view.i
+
+# target to preprocess a source file
+view.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/view.cpp.i
+.PHONY : view.cpp.i
+
+view.s: view.cpp.s
+
+.PHONY : view.s
+
+# target to generate assembly for a file
+view.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/view.cpp.s
+.PHONY : view.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -241,6 +268,9 @@ help:
 	@echo "... robot.o"
 	@echo "... robot.i"
 	@echo "... robot.s"
+	@echo "... view.o"
+	@echo "... view.i"
+	@echo "... view.s"
 .PHONY : help
 
 

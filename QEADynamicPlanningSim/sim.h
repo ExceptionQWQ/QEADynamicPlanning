@@ -7,6 +7,7 @@
 #include <cstring>
 #include <cstdint>
 #include <cstddef>
+#include <numbers>
 #include <random>
 #include <vector>
 #include <queue>

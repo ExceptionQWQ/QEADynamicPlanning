@@ -142,6 +142,33 @@ sim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/build
 .PHONY : sim/fast
 
+ransac.o: ransac.cpp.o
+
+.PHONY : ransac.o
+
+# target to build an object file
+ransac.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/ransac.cpp.o
+.PHONY : ransac.cpp.o
+
+ransac.i: ransac.cpp.i
+
+.PHONY : ransac.i
+
+# target to preprocess a source file
+ransac.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/ransac.cpp.i
+.PHONY : ransac.cpp.i
+
+ransac.s: ransac.cpp.s
+
+.PHONY : ransac.s
+
+# target to generate assembly for a file
+ransac.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/ransac.cpp.s
+.PHONY : ransac.cpp.s
+
 sim.o: sim.cpp.o
 
 .PHONY : sim.o
@@ -178,6 +205,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sim"
+	@echo "... ransac.o"
+	@echo "... ransac.i"
+	@echo "... ransac.s"
 	@echo "... sim.o"
 	@echo "... sim.i"
 	@echo "... sim.s"

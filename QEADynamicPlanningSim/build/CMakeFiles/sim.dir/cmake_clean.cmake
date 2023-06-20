@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/sim.dir/ransac.cpp.o"
   "CMakeFiles/sim.dir/sim.cpp.o"
   "sim"
   "sim.pdb"

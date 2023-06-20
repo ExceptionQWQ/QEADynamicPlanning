@@ -6,9 +6,19 @@
 
 #IncludeRegexTransform: 
 
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/ransac.cpp
+ransac.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/ransac.h
+
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/ransac.h
+sim.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
+
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.cpp
 sim.h
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
+ransac.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/ransac.h
 
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
 iostream
@@ -22,6 +32,8 @@ cstring
 cstdint
 -
 cstddef
+-
+numbers
 -
 random
 -

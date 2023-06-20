@@ -20,7 +20,7 @@ void Wheel_PID_Tick()
 
     //通过速度积分计算行驶过的路程
     leftPWM.dis += leftPWM.speed;
-    rightPWM.dis += rightPWM.speed;
+    rightPWM.dis += -rightPWM.speed;
 
     //计算一次pid
     leftPWM.pwm = PIDTick(&leftPWM.pidHanldeDef, leftPWM.speed);

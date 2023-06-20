@@ -10,8 +10,8 @@
 
 volatile struct RobotMotion
 {
-    double VL;
-    double VR;
+    double VL; //左轮速度
+    double VR; //右轮速度
 };
 
 extern volatile struct RobotMotion robotMotion;
@@ -24,7 +24,7 @@ void MoveBackward(double speed);
 void MoveBackwardWithDis(double speed, double dis);
 void SpinLeft(double speed);
 void SpinRight(double speed);
-void SpinTo(double radian);
+void SpinTo(double speed, double radian);
 
 
 

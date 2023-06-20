@@ -207,7 +207,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 ```
 
-
 ## 读取解析IMU数据
 我们通过STM32CubeMX配置IMU串口和FreeRTOS，在DMA中断回调函数中使用双缓冲接收串口数据，并通过任务通知将接收到的数据传递给IMUDecoder任务来进行解析。
 IMUDecoder任务函数：
@@ -322,3 +321,121 @@ HAL_UART_Transmit(&huart1, message, strlen(message), 100);
 [imu]heading:5.7284 pitch:0.0051 roll:0.0239    
 ```
 
+## 小车运动位置PID控制
+光有速度控制还不行，我们还需要在速度PID控制的基础上实现小车运动的位置闭环控制，通过位置式PID算法实现小车能够从当前位置以指定速度和距离移动，并且通过IMU返回的角度数据，实现小车转弯闭环控制。
+
+定义机器人运动
+```c++
+volatile struct RobotMotion
+{
+    double VL; //左轮速度
+    double VR; //右轮速度
+};
+
+extern volatile struct RobotMotion robotMotion;
+
+void ClearSpeed();
+void CommitSpeed();
+void MoveForward(double speed);
+void MoveForwardWithDis(double speed, double dis);
+void MoveBackward(double speed);
+void MoveBackwardWithDis(double speed, double dis);
+void SpinLeft(double speed);
+void SpinRight(double speed);
+void SpinTo(double speed, double radian);
+```
+清除左右轮速度
+```c++
+void ClearSpeed()
+{
+    robotMotion.VL = 0;
+    robotMotion.VR = 0;
+}
+```
+提交左右轮速度，会实际更新到小车上
+```c++
+void CommitSpeed()
+{
+    leftPWM.pidHanldeDef.target = robotMotion.VL;
+    rightPWM.pidHanldeDef.target = -robotMotion.VR;
+}
+```
+向前移动，不会实际更新到小车上
+```c++
+void MoveForward(double speed)
+{
+    robotMotion.VL += speed;
+    robotMotion.VR += speed;
+}
+```
+向左转，不会实际更新到小车上
+```c++
+void SpinLeft(double speed)
+{
+    robotMotion.VL -= speed;
+    robotMotion.VR += speed;
+}
+```
+向前移动一定距离, 调用此函数会一直阻塞到移动结束
+```c++
+void MoveForwardWithDis(double speed, double dis)
+{
+    volatile struct PIDHanldeDef defL; //定义pid控制句柄
+    volatile struct PIDHanldeDef defR; //定义pid控制句柄
+    CreatePID(&defL, PIDType_Pos, 0.05, 0, 2, -speed, speed); //创建句柄
+    CreatePID(&defR, PIDType_Pos, 0.05, 0, 2, -speed, speed); //创建句柄
+    leftPWM.dis = 0; //清除距离
+    rightPWM.dis = 0; //清除距离
+    defL.target = dis; //目标距离
+    defR.target = dis; //目标距离
+    while (1) {
+        if (fabs(leftPWM.dis - dis) < 10 && fabs(rightPWM.dis - dis) < 10) break; //左右轮同时到达目标位置后才break
+        double retVL = PIDTick(&defL, leftPWM.dis);
+        double retVR = PIDTick(&defR, rightPWM.dis);
+        ClearSpeed();
+        robotMotion.VL += retVL;
+        robotMotion.VR += retVR;
+        CommitSpeed();
+        osDelay(1);
+    }
+    //停止运动
+    ClearSpeed();
+    CommitSpeed();
+}
+```
+实现小车转弯到指定角度, 调用此函数会一直阻塞到移动结束
+```c++
+void SpinTo(double speed, double radian)
+{
+    while (1) {
+        double dr = fabs(radian - robotIMU.heading);
+        if (dr < 0.001) break;
+        double maxSpeed = speed;
+        double speed = dr * 140;
+        if (speed > maxSpeed) speed = maxSpeed;
+        if (radian - robotIMU.heading > 0) {
+            if (radian - robotIMU.heading > PI) {
+                ClearSpeed();
+                SpinRight(speed);
+                CommitSpeed();
+            } else {
+                ClearSpeed();
+                SpinLeft(speed);
+                CommitSpeed();
+            }
+        } else {
+            if (radian - robotIMU.heading > -PI) {
+                ClearSpeed();
+                SpinRight(speed);
+                CommitSpeed();
+            } else {
+                ClearSpeed();
+                SpinLeft(speed);
+                CommitSpeed();
+            }
+        }
+    }
+    ClearSpeed();
+    CommitSpeed();
+}
+```

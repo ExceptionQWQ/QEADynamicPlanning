@@ -194,11 +194,9 @@ void RobotController(void *argument)
 
     osDelay(1000);
 
-    ClearSpeed();
-    MoveForward(10);
-    CommitSpeed();
-
-    osDelay(3000);
+    MoveForwardWithDis(30, 30000);
+    MoveBackwardWithDis(60, 30000);
+    MoveForwardWithDis(30, 30000);
 
 
     ClearSpeed();

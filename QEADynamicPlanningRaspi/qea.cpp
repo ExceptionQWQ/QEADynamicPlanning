@@ -1,16 +1,25 @@
 #include "qea.h"
 #include "robot.h"
-
+#include "lidar.h"
 
 int main(int argc, char** argv)
 {
 	Robot_Init(); //机器人初始化
 	Robot_Start(); //启动机器人线程
+	Lidar_Init();
+	Lidar_Start();
+
 
 	sleep(1);
-	Robot_MoveForward(30, 30000);
-	Robot_MoveBackward(30, 30000);
-	Robot_SpinTo(60, robotInfo.heading + 0.5);
+
+	while (true) {
+		sleep(1);
+		auto points = GetPointData();
+		for (size_t i = 0; i != points.size(); ++i) {
+			std::cout << points[i].angle << " " << (int)points[i].intensity << std::endl;
+		}
+	}
+	
 	sleep(99999);
 	return 0;
 }

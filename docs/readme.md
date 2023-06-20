@@ -439,3 +439,309 @@ void SpinTo(double speed, double radian)
     CommitSpeed();
 }
 ```
+
+## 实现上位机控制机器人移动
+下位机定义接收数据缓冲区、消息缓冲区句柄、串口回调函数
+```c++
+extern uint8_t robotRecvBuff[1024];
+extern int robotRecvOffset;
+extern MessageBufferHandle_t messageBufferHandle;
+void Robot_RxCpltCallback();
+```
+下位机接收上位机的串口接收完成回调函数
+```c++
+void Robot_RxCpltCallback()
+{
+    if (robotRecvBuff[robotRecvOffset] == '\n') {
+        robotRecvBuff[robotRecvOffset + 1] = 0;
+        BaseType_t flag;
+        xMessageBufferSendFromISR(messageBufferHandle, robotRecvBuff, robotRecvOffset + 1, &flag);
+        portYIELD_FROM_ISR(flag);
+        robotRecvOffset = 0;
+    } else {
+        robotRecvOffset++;
+        if (robotRecvOffset >= 1024) robotRecvOffset = 0;
+    }
+    HAL_UART_Receive_IT(&huart1, robotRecvBuff + robotRecvOffset, 1);
+}
+```
+下位机新建RobotController任务函数接收并处理上位机的指令
+```c++
+void RobotController(void *argument)
+{
+  /* USER CODE BEGIN RobotController */
+  /* Infinite loop */
+    osDelay(1000);
+
+    HAL_UART_Receive_IT(&huart1, robotRecvBuff + robotRecvOffset, 1);
+    /* Infinite loop */
+    for(;;)
+    {
+        char message[128] = {0};
+        xMessageBufferReceive(messageBufferHandle, message, 128, portMAX_DELAY);
+
+        if (startsWith(message, "[forward]")) {
+            double speed, dis;
+            sscanf(message, "[forward]speed=%lf dis=%lf", &speed, &dis);
+            MoveForwardWithDis(speed, dis);
+
+            //移动结束发送OK
+            portENTER_CRITICAL();
+            char msgOK[] = "[motion]OK\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgOK, strlen(msgOK), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+        } else if (startsWith(message, "[backward]")) {
+            double speed, dis;
+            sscanf(message, "[backward]speed=%lf dis=%lf", &speed, &dis);
+            MoveBackwardWithDis(speed, dis);
+
+            //移动结束发送OK
+            portENTER_CRITICAL();
+            char msgOK[] = "[motion]OK\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgOK, strlen(msgOK), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+        } else if (startsWith(message, "[spin]")) {
+            double speed, radian;
+            sscanf(message, "[spin]speed=%lf radian=%lf", &speed, &radian);
+            SpinTo(speed, radian);
+
+            //移动结束发送OK
+            portENTER_CRITICAL();
+            char msgOK[] = "[motion]OK\r\n";
+            xSemaphoreTake(debugUartMutexHandle, portMAX_DELAY); //获取串口调试资源
+            HAL_UART_Transmit(&huart1, msgOK, strlen(msgOK), 100);
+            xSemaphoreGive(debugUartMutexHandle); //释放串口调试资源
+            portEXIT_CRITICAL();
+        }
+        osDelay(1);
+    }
+  /* USER CODE END RobotController */
+}
+```
+编写上位机CMakeLists.txt文件, 由于后期会使用opencv绘制图像，所以导入了opencv库。
+```cmake
+cmake_minimum_required(VERSION 3.14)
+project(qea)
+set(CMAKE_CXX_STANDARD 20)
+find_package(OpenCV 4.5 REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+aux_source_directory(. SRC_LISTS)
+add_executable(qea ${SRC_LISTS})
+target_link_libraries(qea ${OpenCV_LIBS} -lwiringPi -pthread)
+```
+定义Robot
+```c++
+#define ROBOT_DEV_PATH "/dev/ttyACM0" //下位机串口路径
+#define ROBOT_BAUD 115200 //下位机串口波特率
+
+struct RobotInfo
+{
+    double xPos; //机器人x坐标
+    double yPos; //机器人y坐标
+    double roll; //翻滚角
+    double pitch; //俯仰角
+    double heading; //偏航角
+};
+
+extern struct RobotInfo robotInfo;
+extern int robotSerial;
+extern pthread_t robotThreadHandle;
+extern char robotRecvBuff[1024];
+extern int robotRecvOffset;
+
+void Robot_Init();
+void Robot_Start();
+
+void Robot_MoveForward(double speed, double dis);
+void Robot_MoveBackward(double speed, double dis);
+void Robot_SpinTo(double speed, double radian);
+```
+定义Robot线程，负责接收下位机的数据并完成解析。
+```c++
+void* RobotThread(void*)
+{
+    robotSerial = serialOpen(ROBOT_DEV_PATH, ROBOT_BAUD);
+    if ( robotSerial < 0) {
+        std::cout << "cannot open robot dev!" << std::endl;
+        exit(0);
+        return nullptr;
+    }
+    while (true) {
+        if (robotRecvOffset >= 1024) robotRecvOffset = 0;
+        robotRecvBuff[robotRecvOffset] = serialGetchar(robotSerial);
+        if (robotRecvBuff[robotRecvOffset] == '\n') {
+            Handle_Robot_Message(robotRecvBuff, robotRecvOffset);
+            robotRecvOffset = 0;
+        } else {
+            ++robotRecvOffset;
+        }
+    }
+    return nullptr;
+}
+```
+启动Robot线程
+```c++
+void Robot_Start()
+{
+    pthread_create(&robotThreadHandle, nullptr, RobotThread, nullptr);
+}
+```
+控制下位机向前移动
+```c++
+void Robot_MoveForward(double speed, double dis)
+{
+    motionOK = false;
+    char message[128] = {0};
+    snprintf(message, 128, "[forward]speed=%.4lf dis=%.4lf\n", speed, dis);
+    std::cout << message << std::endl;
+    serialPuts(robotSerial, message);
+    while (!motionOK) {
+        usleep(1000);
+    }
+}
+```
+控制下位机转弯
+```c++
+void Robot_SpinTo(double speed, double radian)
+{
+    motionOK = false;
+    char message[128] = {0};
+    snprintf(message, 128, "[spin]speed=%.4lf radian=%.4lf\n", speed, radian);
+    std::cout << message << std::endl;
+    serialPuts(robotSerial, message);
+    while (!motionOK) {
+        usleep(1000);
+    }
+}
+```
+
+## 读取解析激光雷达数据
+定义激光雷达数据结构
+```c++
+#define POINT_BUFF_SZ 360
+#define POINT_PER_PACK 12
+#define HEADER 0x54
+
+#define LIDAR_DEV_PATH "/dev/ttyUSB0" //激光雷达设备路径
+#define LIDAR_BAUD 230400 //雷达波特率
+
+typedef struct __attribute__((packed)) {
+    uint16_t distance;
+    uint8_t intensity;
+}LidarPointDataDef;
+
+typedef struct __attribute__((packed)) {
+    uint8_t header;
+    uint8_t ver_len;
+    uint16_t speed;
+    uint16_t start_angle;
+    LidarPointDataDef point[POINT_PER_PACK];
+    uint16_t end_angle;
+    uint16_t time_stamp;
+    uint8_t crc8;
+}LiDARFrameTypeDef;
+
+typedef struct __attribute__((packed)) {
+    uint16_t distance;
+    uint8_t intensity;
+    double angle;
+}LidarPointData;
+```
+激光雷达线程，读取串口数据并解析
+```c++
+void* LidarThread(void*)
+{
+    int fd = serialOpen(LIDAR_DEV_PATH, LIDAR_BAUD);
+    if (fd < 0) {
+        std::cout << "cannot open lidar dev!" << std::endl;
+        exit(0);
+        return nullptr;
+    }
+    while (true) {
+        if (lidarBuffOffset > 900) lidarBuffOffset = 0;
+        //一次性读取64字节
+        for (int i = 0; i < 64; ++i) {
+            lidarBuff[lidarBuffOffset++] = serialGetchar(fd);
+        }
+        while (DecodeLIDARPackage() != 0) {}
+    }
+    return nullptr;
+}
+```
+CRC8算法
+```c++
+uint8_t CalCRC8(uint8_t *p, uint8_t len)
+{
+    uint8_t crc = 0; uint16_t i;
+    for (i = 0; i < len; i++){
+        crc = CrcTable[(crc ^ *p++) & 0xff];
+    }
+    return crc;
+}
+```
+解析雷达数据
+```c++
+int DecodeLIDARPackage()
+{
+    //定位帧头
+    int packageStart = 0;
+    int flag = 0;
+    for (; lidarBuffOffset > 2 && packageStart < lidarBuffOffset - 1; ++packageStart) {
+        if (lidarBuff[packageStart] == 0x54 && lidarBuff[packageStart + 1] == 0x2C) { //帧头固定字节0x54 0x2C
+            flag = 1;
+            break;
+        }
+    }
+    //将帧头移动到起始位置
+    if (flag) {
+        memcpy(lidarBuff, lidarBuff + packageStart, lidarBuffOffset - packageStart);
+        lidarBuffOffset -= packageStart;
+    }
+    if (lidarBuffOffset >= 47) { //有一个完整的数据包
+        LiDARFrameTypeDef* liDarFrameTypeDef = (LiDARFrameTypeDef*)lidarBuff;
+        uint8_t crc8 = CalCRC8(lidarBuff, 46);
+        int flag2 = 0;
+        if (crc8 == liDarFrameTypeDef->crc8) { //判断crc
+            flag2 = 1;
+            //解析角度 (end_angle – start_angle)/(len – 1)
+            double step = 0;
+            if (liDarFrameTypeDef->end_angle - liDarFrameTypeDef->start_angle > 0) {
+                step = (liDarFrameTypeDef->end_angle - liDarFrameTypeDef->start_angle) / 11.0;
+            } else {
+                step = (36000 + liDarFrameTypeDef->end_angle - liDarFrameTypeDef->start_angle) / 11.0;
+            }
+            for (int i = 0; i < 12; ++i) {
+                double angle = (liDarFrameTypeDef->start_angle + step * i) / 100.0;
+                angle = fmod(angle + 360, 360);
+                int distance = liDarFrameTypeDef->point[i].distance;
+                uint8_t intensity = liDarFrameTypeDef->point[i].intensity;
+                lidarPointData[(int)angle].distance = distance;
+                lidarPointData[(int)angle].intensity = intensity;
+                lidarPointData[(int)angle].angle = angle;
+            }
+        }
+        memcpy(lidarBuff, lidarBuff + 47, lidarBuffOffset - 47);
+        lidarBuffOffset -= 47;
+        return flag2;
+    }
+    return 0;
+}
+```
+获取激光雷达扫描结果（360个点）
+```c++
+std::vector<LidarPointData> GetPointData()
+{
+    std::vector<LidarPointData> vec;
+    for (int i = 0; i < POINT_BUFF_SZ; ++i) {
+        vec.push_back(lidarPointData[i]);
+    }
+    std::sort(std::begin(vec), std::end(vec), [](const auto& p1, const auto& p2) {
+        return p1.angle < p2.angle;
+    });
+    return vec;
+}
+```

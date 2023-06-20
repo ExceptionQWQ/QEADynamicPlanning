@@ -272,8 +272,6 @@ void RobotController(void *argument)
         }
         osDelay(1);
     }
-
-
   /* USER CODE END RobotController */
 }
 

@@ -6,11 +6,35 @@
 
 #IncludeRegexTransform: 
 
+/home/pi/QEADynamicPlanningRaspi/lidar.h
+iostream
+-
+cmath
+-
+cstdio
+-
+cstdlib
+-
+cstdint
+-
+unistd.h
+-
+memory.h
+-
+vector
+-
+queue
+-
+wiringSerial.h
+-
+
 /home/pi/QEADynamicPlanningRaspi/qea.cpp
 qea.h
 /home/pi/QEADynamicPlanningRaspi/qea.h
 robot.h
 /home/pi/QEADynamicPlanningRaspi/robot.h
+lidar.h
+/home/pi/QEADynamicPlanningRaspi/lidar.h
 
 /home/pi/QEADynamicPlanningRaspi/qea.h
 iostream

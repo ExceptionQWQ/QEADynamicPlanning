@@ -20,7 +20,6 @@ extern int robotRecvOffset;
 
 extern MessageBufferHandle_t messageBufferHandle;
 
-
 void Robot_RxCpltCallback();
 
 #endif

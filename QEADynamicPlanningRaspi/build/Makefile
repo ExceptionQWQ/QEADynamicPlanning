@@ -142,6 +142,33 @@ qea/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/build
 .PHONY : qea/fast
 
+lidar.o: lidar.cpp.o
+
+.PHONY : lidar.o
+
+# target to build an object file
+lidar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/lidar.cpp.o
+.PHONY : lidar.cpp.o
+
+lidar.i: lidar.cpp.i
+
+.PHONY : lidar.i
+
+# target to preprocess a source file
+lidar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/lidar.cpp.i
+.PHONY : lidar.cpp.i
+
+lidar.s: lidar.cpp.s
+
+.PHONY : lidar.s
+
+# target to generate assembly for a file
+lidar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/lidar.cpp.s
+.PHONY : lidar.cpp.s
+
 qea.o: qea.cpp.o
 
 .PHONY : qea.o
@@ -205,6 +232,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... qea"
+	@echo "... lidar.o"
+	@echo "... lidar.i"
+	@echo "... lidar.s"
 	@echo "... qea.o"
 	@echo "... qea.i"
 	@echo "... qea.s"

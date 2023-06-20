@@ -89,9 +89,22 @@ CMakeFiles/qea.dir/lidar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/lidar.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/lidar.cpp -o CMakeFiles/qea.dir/lidar.cpp.s
 
+CMakeFiles/qea.dir/mapping.cpp.o: CMakeFiles/qea.dir/flags.make
+CMakeFiles/qea.dir/mapping.cpp.o: ../mapping.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/qea.dir/mapping.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/mapping.cpp.o -c /home/pi/QEADynamicPlanningRaspi/mapping.cpp
+
+CMakeFiles/qea.dir/mapping.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qea.dir/mapping.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/QEADynamicPlanningRaspi/mapping.cpp > CMakeFiles/qea.dir/mapping.cpp.i
+
+CMakeFiles/qea.dir/mapping.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/mapping.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/mapping.cpp -o CMakeFiles/qea.dir/mapping.cpp.s
+
 CMakeFiles/qea.dir/qea.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/qea.cpp.o: ../qea.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/qea.dir/qea.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/qea.dir/qea.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/qea.cpp.o -c /home/pi/QEADynamicPlanningRaspi/qea.cpp
 
 CMakeFiles/qea.dir/qea.cpp.i: cmake_force
@@ -104,7 +117,7 @@ CMakeFiles/qea.dir/qea.cpp.s: cmake_force
 
 CMakeFiles/qea.dir/robot.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/robot.cpp.o: ../robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/qea.dir/robot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/qea.dir/robot.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/robot.cpp.o -c /home/pi/QEADynamicPlanningRaspi/robot.cpp
 
 CMakeFiles/qea.dir/robot.cpp.i: cmake_force
@@ -117,7 +130,7 @@ CMakeFiles/qea.dir/robot.cpp.s: cmake_force
 
 CMakeFiles/qea.dir/view.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/view.cpp.o: ../view.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/qea.dir/view.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/qea.dir/view.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/view.cpp.o -c /home/pi/QEADynamicPlanningRaspi/view.cpp
 
 CMakeFiles/qea.dir/view.cpp.i: cmake_force
@@ -131,6 +144,7 @@ CMakeFiles/qea.dir/view.cpp.s: cmake_force
 # Object files for target qea
 qea_OBJECTS = \
 "CMakeFiles/qea.dir/lidar.cpp.o" \
+"CMakeFiles/qea.dir/mapping.cpp.o" \
 "CMakeFiles/qea.dir/qea.cpp.o" \
 "CMakeFiles/qea.dir/robot.cpp.o" \
 "CMakeFiles/qea.dir/view.cpp.o"
@@ -139,6 +153,7 @@ qea_OBJECTS = \
 qea_EXTERNAL_OBJECTS =
 
 qea: CMakeFiles/qea.dir/lidar.cpp.o
+qea: CMakeFiles/qea.dir/mapping.cpp.o
 qea: CMakeFiles/qea.dir/qea.cpp.o
 qea: CMakeFiles/qea.dir/robot.cpp.o
 qea: CMakeFiles/qea.dir/view.cpp.o
@@ -196,7 +211,7 @@ qea: /usr/lib/arm-linux-gnueabihf/libopencv_photo.so.4.5.1
 qea: /usr/lib/arm-linux-gnueabihf/libopencv_imgproc.so.4.5.1
 qea: /usr/lib/arm-linux-gnueabihf/libopencv_core.so.4.5.1
 qea: CMakeFiles/qea.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable qea"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable qea"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qea.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

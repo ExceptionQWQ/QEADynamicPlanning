@@ -169,6 +169,33 @@ lidar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/lidar.cpp.s
 .PHONY : lidar.cpp.s
 
+mapping.o: mapping.cpp.o
+
+.PHONY : mapping.o
+
+# target to build an object file
+mapping.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/mapping.cpp.o
+.PHONY : mapping.cpp.o
+
+mapping.i: mapping.cpp.i
+
+.PHONY : mapping.i
+
+# target to preprocess a source file
+mapping.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/mapping.cpp.i
+.PHONY : mapping.cpp.i
+
+mapping.s: mapping.cpp.s
+
+.PHONY : mapping.s
+
+# target to generate assembly for a file
+mapping.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/mapping.cpp.s
+.PHONY : mapping.cpp.s
+
 qea.o: qea.cpp.o
 
 .PHONY : qea.o
@@ -262,6 +289,9 @@ help:
 	@echo "... lidar.o"
 	@echo "... lidar.i"
 	@echo "... lidar.s"
+	@echo "... mapping.o"
+	@echo "... mapping.i"
+	@echo "... mapping.s"
 	@echo "... qea.o"
 	@echo "... qea.i"
 	@echo "... qea.s"

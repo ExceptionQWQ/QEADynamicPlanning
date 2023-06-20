@@ -5,6 +5,7 @@
 
 #define ROBOT_DEV_PATH "/dev/ttyACM0"
 #define ROBOT_BAUD 115200
+#define ROBOT_MM_TO_PULSE 438 //1毫米对应的脉冲数
 
 struct RobotInfo
 {
@@ -25,9 +26,9 @@ extern int robotRecvOffset;
 void Robot_Init();
 void Robot_Start();
 
-void Robot_MoveForward(double speed, double dis);
-void Robot_MoveBackward(double speed, double dis);
-void Robot_SpinTo(double speed, double radian);
+bool Robot_MoveForward(double speed, double dis);
+bool Robot_MoveBackward(double speed, double dis);
+bool Robot_SpinTo(double speed, double radian);
 
 
 

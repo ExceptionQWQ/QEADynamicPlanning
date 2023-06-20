@@ -6,13 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/QEADynamicPlanningRaspi/lidar.cpp
-lidar.h
-/home/pi/QEADynamicPlanningRaspi/lidar.h
-
 /home/pi/QEADynamicPlanningRaspi/lidar.h
 qea.h
 /home/pi/QEADynamicPlanningRaspi/qea.h
+
+/home/pi/QEADynamicPlanningRaspi/mapping.h
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
+lidar.h
+/home/pi/QEADynamicPlanningRaspi/lidar.h
+
+/home/pi/QEADynamicPlanningRaspi/qea.cpp
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
+robot.h
+/home/pi/QEADynamicPlanningRaspi/robot.h
+lidar.h
+/home/pi/QEADynamicPlanningRaspi/lidar.h
+view.h
+/home/pi/QEADynamicPlanningRaspi/view.h
+mapping.h
+/home/pi/QEADynamicPlanningRaspi/mapping.h
 
 /home/pi/QEADynamicPlanningRaspi/qea.h
 iostream
@@ -41,6 +55,20 @@ wiringSerial.h
 -
 opencv2/opencv.hpp
 -
+
+/home/pi/QEADynamicPlanningRaspi/robot.cpp
+robot.h
+/home/pi/QEADynamicPlanningRaspi/robot.h
+
+/home/pi/QEADynamicPlanningRaspi/robot.h
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
+
+/home/pi/QEADynamicPlanningRaspi/view.h
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
+lidar.h
+/home/pi/QEADynamicPlanningRaspi/lidar.h
 
 /usr/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

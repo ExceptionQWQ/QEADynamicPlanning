@@ -142,6 +142,33 @@ sim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/build
 .PHONY : sim/fast
 
+gradient.o: gradient.cpp.o
+
+.PHONY : gradient.o
+
+# target to build an object file
+gradient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/gradient.cpp.o
+.PHONY : gradient.cpp.o
+
+gradient.i: gradient.cpp.i
+
+.PHONY : gradient.i
+
+# target to preprocess a source file
+gradient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/gradient.cpp.i
+.PHONY : gradient.cpp.i
+
+gradient.s: gradient.cpp.s
+
+.PHONY : gradient.s
+
+# target to generate assembly for a file
+gradient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/gradient.cpp.s
+.PHONY : gradient.cpp.s
+
 ransac.o: ransac.cpp.o
 
 .PHONY : ransac.o
@@ -205,6 +232,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sim"
+	@echo "... gradient.o"
+	@echo "... gradient.i"
+	@echo "... gradient.s"
 	@echo "... ransac.o"
 	@echo "... ransac.i"
 	@echo "... ransac.s"

@@ -7,49 +7,130 @@ QEA小车最终测试（动态路径规划）
 
 
 
+## PID算法编写
+由于我们项目中会用到很多次PID算法，所以我们将PID算法写成库的形式供其他模块调用。  
+
+定义PID句柄结构体:
+```c++
+enum PIDType
+{
+    PIDType_Pos = 1, //位置式
+    PIDType_Inc = 2, //增量式
+};
+
+volatile struct PIDHanldeDef
+{
+    double kp; //p比例系数
+    double ki; //i比例系数
+    double kd; //d比例系数
+    double value; //实际测量值
+    double target; //目标值
+    double error; //误差
+    double totalError; //总误差
+    double lastError; //上一次误差
+    double lastError2; //上上一次误差
+    double minPWM; //最小输出PWM
+    double maxPWM; //最大输出PWM
+    double pwm; //最终输出PWM
+    enum PIDType pidType; //PID算法类型
+};
+```
+
+创建PID句柄
+```c++
+void CreatePID(volatile struct PIDHanldeDef* def, enum PIDType pidType, double kp, double ki, double kd, double minPWM, double maxPWM)
+{
+    def->kp = kp;
+    def->ki = ki;
+    def->kd = kd;
+    def->value = 0;
+    def->target = 0;
+    def->error = 0;
+    def->totalError = 0;
+    def->lastError = 0;
+    def->lastError2 = 0;
+    def->minPWM = minPWM;
+    def->maxPWM = maxPWM;
+    def->pwm = 0;
+    def->pidType = pidType;
+}
+```
+外部程序通过调用PIDTick完成一次PID计算
+```c++
+double PIDTick(volatile struct PIDHanldeDef* def, double newValue)
+{
+    def->value = newValue;
+    switch (def->pidType) {
+        case PIDType_Pos: //位置式PID
+            PosTick(def);
+            break;
+        case PIDType_Inc: //增量式PID
+            IncTick(def);
+            break;
+    }
+    return def->pwm;
+}
+```
+位置式PID实现原理
+```c++
+void PosTick(volatile struct PIDHanldeDef* def)
+{
+    def->lastError = def->error;
+    def->error = def->target - def->value;
+    def->totalError += def->error;
+
+    double pwm = def->kp * def->error +
+                 def->ki * def->totalError +
+                 def->kd * (def->error - def->lastError);
+    def->pwm += pwm;
+    if (def->pwm > def->maxPWM) def->pwm = def->maxPWM;
+    if (def->pwm < def->minPWM) def->pwm = def->minPWM;
+}
+```
+增量式PID实现原理
+```c++
+void IncTick(volatile struct PIDHanldeDef* def)
+{
+    def->lastError2 = def->lastError;
+    def->lastError = def->error;
+    def->error = def->target - def->value;
+
+    double pwm = def->kp * (def->error - def->lastError) +
+                 def->ki * def->error +
+                 def->kd * (def->error - 2 * def->lastError + def->lastError2);
+    def->pwm += pwm;
+    if (def->pwm > def->maxPWM) def->pwm = def->maxPWM;
+    if (def->pwm < def->minPWM) def->pwm = def->minPWM;
+}
+```
+
+
+
 ## 电机速度PID控制
 我们通过增量式PID算法实现小车电机速度的闭环控制。 
 
 
-
-pwm结构体：
+电机PID控制结构体：
 ```c++
 volatile struct WheelPWM
 {
-    double kp; //p比例系统
-    double ki; //i比例系统
-    double kd; //d比例系数
+    volatile struct PIDHanldeDef pidHanldeDef; //pid算法句柄
     double speed; //电机速度
-    double target; //目标速度
-    double error; //误差
-    double lastError; //上一次误差
-    double lastError2; //上上一次误差
-    double minPWM; //最小输出pwm值
-    double maxPWM; //最大输出pwm值
-    double pwm; //最终输出pwm值
     double dis; //路程
+    double pwm; //最终输出pwm
 };
 ```
-
-增量式PID算法：
+初始化电机PID控制
 ```c++
-void Tick(volatile struct WheelPWM* wheelPwm)
+void Wheel_PID_Init()
 {
-    wheelPwm->lastError2 = wheelPwm->lastError;
-    wheelPwm->lastError = wheelPwm->error;
-    wheelPwm->error = wheelPwm->target - wheelPwm->speed;
-
-    double pwm = wheelPwm->kp * (wheelPwm->error - wheelPwm->lastError) +
-                 wheelPwm->ki * wheelPwm->error +
-                 wheelPwm->kd * (wheelPwm->error - 2 * wheelPwm->lastError + wheelPwm->lastError2);
-    wheelPwm->pwm += pwm;
-    if (wheelPwm->pwm > wheelPwm->maxPWM) wheelPwm->pwm = wheelPwm->maxPWM;
-    if (wheelPwm->pwm < wheelPwm->minPWM) wheelPwm->pwm = wheelPwm->minPWM;
+    CreatePID(&leftPWM.pidHanldeDef, PIDType_Inc, 960, 240, 0, -1200, 1200);
+    CreatePID(&rightPWM.pidHanldeDef, PIDType_Inc, 960, 240, 0, -1200, 1200);
 }
 ```
-
+完成一次电机PID计算并更新PWM
 ```c++
-void PID_Tick()
+void Wheel_PID_Tick()
 {
     //获取左右轮速度
     leftPWM.speed = (short) __HAL_TIM_GET_COUNTER(&htim8);
@@ -62,8 +143,8 @@ void PID_Tick()
     rightPWM.dis += rightPWM.speed;
 
     //计算一次pid
-    Tick(&leftPWM);
-    Tick(&rightPWM);
+    leftPWM.pwm = PIDTick(&leftPWM.pidHanldeDef, leftPWM.speed);
+    rightPWM.pwm = PIDTick(&rightPWM.pidHanldeDef, rightPWM.speed);
 
     //更新左轮pwm
     if (leftPWM.pwm > 0) {
@@ -88,9 +169,9 @@ void PID_Tick()
         __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
         __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
     }
-}
+}  
 ```
-启动增量式速度pid控制算法：
+启动电机PID速度控制
 ```c++
     //启动编码器
     HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_1 | TIM_CHANNEL_2);
@@ -105,7 +186,7 @@ void PID_Tick()
     //开启编码器速度采集 1kHz
     HAL_TIM_Base_Start_IT(&htim7);
 ```
-在定时器回调函数中计算PID：
+在定时器回调函数中调用PID控制算法：
 ```c++
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -119,7 +200,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
   //进行一次pid计算
   if (htim->Instance == TIM7) {
-      PID_Tick();
+      Wheel_PID_Tick();
   }
 
   /* USER CODE END Callback 1 */
@@ -240,3 +321,4 @@ HAL_UART_Transmit(&huart1, message, strlen(message), 100);
 [imu]heading:5.7051 pitch:0.0049 roll:0.0242                                    
 [imu]heading:5.7284 pitch:0.0051 roll:0.0239    
 ```
+

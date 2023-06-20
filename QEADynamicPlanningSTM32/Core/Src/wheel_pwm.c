@@ -4,38 +4,13 @@ volatile struct WheelPWM leftPWM;
 volatile struct WheelPWM rightPWM;
 
 
-void PID_Init()
+void Wheel_PID_Init()
 {
-    leftPWM.kp = 960;
-    leftPWM.ki = 240;
-    leftPWM.kd = 0;
-    leftPWM.target = 0;
-    leftPWM.minPWM = -1200;
-    leftPWM.maxPWM = 1200;
-
-    rightPWM.kp = 960;
-    rightPWM.ki = 240;
-    rightPWM.kd = 0;
-    rightPWM.target = 0;
-    rightPWM.minPWM = -1200;
-    rightPWM.maxPWM = 1200;
+    CreatePID(&leftPWM.pidHanldeDef, PIDType_Inc, 960, 240, 0, -1200, 1200);
+    CreatePID(&rightPWM.pidHanldeDef, PIDType_Inc, 960, 240, 0, -1200, 1200);
 }
 
-void Tick(volatile struct WheelPWM* wheelPwm)
-{
-    wheelPwm->lastError2 = wheelPwm->lastError;
-    wheelPwm->lastError = wheelPwm->error;
-    wheelPwm->error = wheelPwm->target - wheelPwm->speed;
-
-    double pwm = wheelPwm->kp * (wheelPwm->error - wheelPwm->lastError) +
-                 wheelPwm->ki * wheelPwm->error +
-                 wheelPwm->kd * (wheelPwm->error - 2 * wheelPwm->lastError + wheelPwm->lastError2);
-    wheelPwm->pwm += pwm;
-    if (wheelPwm->pwm > wheelPwm->maxPWM) wheelPwm->pwm = wheelPwm->maxPWM;
-    if (wheelPwm->pwm < wheelPwm->minPWM) wheelPwm->pwm = wheelPwm->minPWM;
-}
-
-void PID_Tick()
+void Wheel_PID_Tick()
 {
     //获取左右轮速度
     leftPWM.speed = (short) __HAL_TIM_GET_COUNTER(&htim8);
@@ -48,8 +23,8 @@ void PID_Tick()
     rightPWM.dis += rightPWM.speed;
 
     //计算一次pid
-    Tick(&leftPWM);
-    Tick(&rightPWM);
+    leftPWM.pwm = PIDTick(&leftPWM.pidHanldeDef, leftPWM.speed);
+    rightPWM.pwm = PIDTick(&rightPWM.pidHanldeDef, rightPWM.speed);
 
     //更新左轮pwm
     if (leftPWM.pwm > 0) {

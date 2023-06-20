@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/gpio.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/imu.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.obj"
+  "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/motion.c.obj"
+  "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/pid.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_hal_timebase_tim.c.obj"
   "CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/stm32f1xx_it.c.obj"

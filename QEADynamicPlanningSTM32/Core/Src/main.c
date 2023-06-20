@@ -29,8 +29,10 @@
 
 #include "string.h"
 #include "stdio.h"
+#include "pid.h"
 #include "wheel_pwm.h"
 #include "imu.h"
+#include "motion.h"
 
 /* USER CODE END Includes */
 
@@ -120,7 +122,7 @@ int main(void)
   MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
 
-    PID_Init();
+    Wheel_PID_Init();
 
     //启动编码器
     HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_1 | TIM_CHANNEL_2);
@@ -221,7 +223,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
   //进行一次pid计算
   if (htim->Instance == TIM7) {
-      PID_Tick();
+     Wheel_PID_Tick();
   }
 
   /* USER CODE END Callback 1 */

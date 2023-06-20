@@ -277,6 +277,60 @@ Core/Src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/main.c.s
 .PHONY : Core/Src/main.c.s
 
+Core/Src/motion.obj: Core/Src/motion.c.obj
+
+.PHONY : Core/Src/motion.obj
+
+# target to build an object file
+Core/Src/motion.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/motion.c.obj
+.PHONY : Core/Src/motion.c.obj
+
+Core/Src/motion.i: Core/Src/motion.c.i
+
+.PHONY : Core/Src/motion.i
+
+# target to preprocess a source file
+Core/Src/motion.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/motion.c.i
+.PHONY : Core/Src/motion.c.i
+
+Core/Src/motion.s: Core/Src/motion.c.s
+
+.PHONY : Core/Src/motion.s
+
+# target to generate assembly for a file
+Core/Src/motion.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/motion.c.s
+.PHONY : Core/Src/motion.c.s
+
+Core/Src/pid.obj: Core/Src/pid.c.obj
+
+.PHONY : Core/Src/pid.obj
+
+# target to build an object file
+Core/Src/pid.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/pid.c.obj
+.PHONY : Core/Src/pid.c.obj
+
+Core/Src/pid.i: Core/Src/pid.c.i
+
+.PHONY : Core/Src/pid.i
+
+# target to preprocess a source file
+Core/Src/pid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/pid.c.i
+.PHONY : Core/Src/pid.c.i
+
+Core/Src/pid.s: Core/Src/pid.c.s
+
+.PHONY : Core/Src/pid.s
+
+# target to generate assembly for a file
+Core/Src/pid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QEADynamicPlanningSTM32.elf.dir/build.make CMakeFiles/QEADynamicPlanningSTM32.elf.dir/Core/Src/pid.c.s
+.PHONY : Core/Src/pid.c.s
+
 Core/Src/stm32f1xx_hal_msp.obj: Core/Src/stm32f1xx_hal_msp.c.obj
 
 .PHONY : Core/Src/stm32f1xx_hal_msp.obj
@@ -1201,6 +1255,12 @@ help:
 	@echo "... Core/Src/main.obj"
 	@echo "... Core/Src/main.i"
 	@echo "... Core/Src/main.s"
+	@echo "... Core/Src/motion.obj"
+	@echo "... Core/Src/motion.i"
+	@echo "... Core/Src/motion.s"
+	@echo "... Core/Src/pid.obj"
+	@echo "... Core/Src/pid.i"
+	@echo "... Core/Src/pid.s"
 	@echo "... Core/Src/stm32f1xx_hal_msp.obj"
 	@echo "... Core/Src/stm32f1xx_hal_msp.i"
 	@echo "... Core/Src/stm32f1xx_hal_msp.s"

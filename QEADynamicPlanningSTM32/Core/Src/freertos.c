@@ -29,6 +29,7 @@
 #include "stdio.h"
 #include "string.h"
 #include "imu.h"
+#include "motion.h"
 
 /* USER CODE END Includes */
 
@@ -65,6 +66,13 @@ const osThreadAttr_t imuDecoder_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for robotController */
+osThreadId_t robotControllerHandle;
+const osThreadAttr_t robotController_attributes = {
+  .name = "robotController",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -73,6 +81,7 @@ const osThreadAttr_t imuDecoder_attributes = {
 
 void StartDefaultTask(void *argument);
 void IMUDecoder(void *argument);
+void RobotController(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -108,6 +117,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of imuDecoder */
   imuDecoderHandle = osThreadNew(IMUDecoder, NULL, &imuDecoder_attributes);
+
+  /* creation of robotController */
+  robotControllerHandle = osThreadNew(RobotController, NULL, &robotController_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -166,6 +178,39 @@ void IMUDecoder(void *argument)
     }
 
   /* USER CODE END IMUDecoder */
+}
+
+/* USER CODE BEGIN Header_RobotController */
+/**
+* @brief Function implementing the robotController thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_RobotController */
+void RobotController(void *argument)
+{
+  /* USER CODE BEGIN RobotController */
+  /* Infinite loop */
+
+    osDelay(1000);
+
+    ClearSpeed();
+    MoveForward(10);
+    CommitSpeed();
+
+    osDelay(3000);
+
+
+    ClearSpeed();
+    CommitSpeed();
+
+
+
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END RobotController */
 }
 
 /* Private application code --------------------------------------------------*/

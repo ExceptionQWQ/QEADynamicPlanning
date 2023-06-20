@@ -3,21 +3,14 @@
 
 #include "main.h"
 #include "tim.h"
+#include "pid.h"
 
 volatile struct WheelPWM
 {
-    double kp;
-    double ki;
-    double kd;
-    double speed;
-    double target;
-    double error;
-    double lastError;
-    double lastError2;
-    double minPWM;
-    double maxPWM;
-    double pwm;
-    double dis;
+    volatile struct PIDHanldeDef pidHanldeDef; //pid算法句柄
+    double speed; //电机速度
+    double dis; //路程
+    double pwm; //最终输出pwm
 };
 
 
@@ -25,8 +18,8 @@ extern volatile struct WheelPWM leftPWM;
 extern volatile struct WheelPWM rightPWM;
 
 
-void PID_Init();
-void PID_Tick();
+void Wheel_PID_Init();
+void Wheel_PID_Tick();
 
 
 

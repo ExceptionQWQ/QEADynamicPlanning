@@ -18,7 +18,7 @@ double QOBJ::GetValue(double x, double y) const
 std::pair<double, double> QOBJ::GetGradient(double x, double y)
 {
     double tx = x - xPos, ty = y - yPos;
-    double sb = std::pow(std::sqrt(std::pow(tx, 2) + std::pow(ty, 2)), 3);
+    double sb = std::pow(std::sqrt(std::pow(tx, 2) + std::pow(ty, 2) + 0.0001), 3);
     double partialQOverpartialX = k * q * tx / sb;
     double partialQOverpartialY = k * q * ty / sb;
     return std::make_pair(partialQOverpartialX, partialQOverpartialY);
@@ -27,7 +27,7 @@ std::pair<double, double> QOBJ::GetGradient(double x, double y)
 std::pair<double, double> QOBJ::GetGradient(double x, double y) const
 {
     double tx = x - xPos, ty = y - yPos;
-    double sb = std::pow(std::sqrt(std::pow(tx, 2) + std::pow(ty, 2)), 3);
+    double sb = std::pow(std::sqrt(std::pow(tx, 2) + std::pow(ty, 2) + 0.0001), 3);
     double partialQOverpartialX = k * q * tx / sb;
     double partialQOverpartialY = k * q * ty / sb;
     return std::make_pair(partialQOverpartialX, partialQOverpartialY);

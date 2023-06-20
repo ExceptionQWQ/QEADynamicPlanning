@@ -1,6 +1,9 @@
 #include "gradient.h"
 
 
+/*
+ * @brief 由电荷对象计算值
+ */
 double CalcQOBJSValue(const std::vector<QOBJ>& qobjs, int x, int y)
 {
     float phi = 0;
@@ -10,6 +13,9 @@ double CalcQOBJSValue(const std::vector<QOBJ>& qobjs, int x, int y)
     return phi;
 }
 
+/*
+ * @brief 由电荷对象计算梯度
+ */
 std::pair<double, double> CalcQOBJSGradient(const std::vector<QOBJ>& qobjs, int x, int y)
 {
     std::pair<float, float> dxy = {};

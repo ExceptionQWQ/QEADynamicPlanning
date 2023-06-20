@@ -20,19 +20,43 @@ void DrawVector(cv::Mat view, cv::Point start, cv::Vec2f vector, cv::Scalar colo
 }
 
 /*
- * @brief 获取向量场的图像
- * @param vecField 向量场
+ * @brief 由qobj生成标量场
+ * @param qobjs 电荷对象
+ * @param fieldSz 场大小
+ * @param scale 缩放
+ * @param offset 偏移
+ */
+cv::Mat GenerateScalarField(const std::vector<QOBJ>& qobjs, cv::Size fieldSz, double scale, cv::Point offset)
+{
+    cv::Mat field = cv::Mat::zeros(fieldSz, CV_32FC1);
+    for (int x = 0; x < field.cols; ++x) {
+        for (int y = 0; y < field.rows; ++y) {
+            int tx = x * scale + offset.x;
+            int ty = y * scale + offset.y;
+            float phi = 0;
+            for (size_t qindex = 0; qindex != qobjs.size(); ++qindex) {
+                phi += qobjs[qindex].GetValue(tx, ty);
+            }
+            field.at<float>(y, x) = phi;
+        }
+    }
+    return field;
+}
+
+/*
+ * @brief 获取梯度图像
+ * @param scalarField 标量场
  * @param color 颜色
  */
-cv::Mat GetVectorFieldView(cv::Mat vecField, cv::Scalar color)
+cv::Mat GetGradientViewFromScalarField(cv::Mat scalarField, cv::Scalar color)
 {
-    cv::Mat view = cv::Mat::zeros(vecField.size(), CV_8UC3);
-    int stepX = view.cols / 20, stepY = view.rows / 20;
+    cv::Mat view = cv::Mat::zeros(scalarField.size(), CV_8UC3);
+    int stepX = view.cols / 30, stepY = view.rows / 30;
 
     for (int x = 0; x < view.cols - 1; x += stepX) {
         for (int y = 0; y < view.rows - 1; y += stepY) {
-            double dx = vecField.at<float>(y, x + 1) - vecField.at<float>(y, x);
-            double dy = vecField.at<float>(y + 1, x) - vecField.at<float>(y, x);
+            double dx = scalarField.at<float>(y, x + 1) - scalarField.at<float>(y, x);
+            double dy = scalarField.at<float>(y + 1, x) - scalarField.at<float>(y, x);
             DrawVector(view, cv::Point(x, y), cv::Vec2f(dx, dy), color, 1);
         }
     }

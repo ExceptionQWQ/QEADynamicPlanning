@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sim.dir/gradient.cpp.o"
+  "CMakeFiles/sim.dir/qobj.cpp.o"
   "CMakeFiles/sim.dir/ransac.cpp.o"
   "CMakeFiles/sim.dir/sim.cpp.o"
   "sim"

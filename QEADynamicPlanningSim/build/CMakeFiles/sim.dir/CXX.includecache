@@ -6,13 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.cpp
-gradient.h
-/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.h
-
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.h
 sim.h
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
+qobj.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/qobj.h
+
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/qobj.h
+sim.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
+
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/ransac.h
+sim.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
+
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.cpp
+sim.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
+ransac.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/ransac.h
+gradient.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.h
+qobj.h
+/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/qobj.h
 
 /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.h
 iostream

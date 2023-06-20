@@ -1,25 +1,21 @@
 #include "sim.h"
 #include "ransac.h"
 #include "gradient.h"
+#include "qobj.h"
 
 int main(int argc, char** argv)
 {
     srand(time(0));
 
-    cv::Mat view = cv::Mat::zeros(cv::Size(512, 512), CV_32FC1);
+  
+    QOBJ qobj1(100, 100, 100);
+    QOBJ qobj2(-100, 300, 300);
+    QOBJ qobj3(-400, 200, 400);
+    
+    cv::Mat field = GenerateScalarField({qobj1, qobj2, qobj3}, cv::Size(512, 512));
+    cv::Mat fieldView = GetGradientViewFromScalarField(field, {0, 255, 0});
 
-    //在中心放一个电荷
-    double cx = 256, cy = 256;
-    for (int x = 0; x < view.cols; ++x) {
-        for (int y = 0; y < view.rows; ++y) {
-            double phi = 40000 / (std::pow(cx - x, 2) + std::pow(cy - y, 2) + 1);
-            view.at<float>(y, x) = (float)phi;
-        }
-    }
-
-    cv::Mat fieldView = GetVectorFieldView(view, {0, 255, 0});
-
-    cv::imshow("view", view);
+    cv::imshow("field", field);
     cv::imshow("fieldView", fieldView);
     cv::waitKey(0);
     return 0;

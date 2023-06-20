@@ -169,6 +169,33 @@ gradient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/gradient.cpp.s
 .PHONY : gradient.cpp.s
 
+qobj.o: qobj.cpp.o
+
+.PHONY : qobj.o
+
+# target to build an object file
+qobj.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/qobj.cpp.o
+.PHONY : qobj.cpp.o
+
+qobj.i: qobj.cpp.i
+
+.PHONY : qobj.i
+
+# target to preprocess a source file
+qobj.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/qobj.cpp.i
+.PHONY : qobj.cpp.i
+
+qobj.s: qobj.cpp.s
+
+.PHONY : qobj.s
+
+# target to generate assembly for a file
+qobj.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/qobj.cpp.s
+.PHONY : qobj.cpp.s
+
 ransac.o: ransac.cpp.o
 
 .PHONY : ransac.o
@@ -235,6 +262,9 @@ help:
 	@echo "... gradient.o"
 	@echo "... gradient.i"
 	@echo "... gradient.s"
+	@echo "... qobj.o"
+	@echo "... qobj.i"
+	@echo "... qobj.s"
 	@echo "... ransac.o"
 	@echo "... ransac.i"
 	@echo "... ransac.s"

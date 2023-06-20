@@ -89,9 +89,22 @@ CMakeFiles/sim.dir/gradient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sim.dir/gradient.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/gradient.cpp -o CMakeFiles/sim.dir/gradient.cpp.s
 
+CMakeFiles/sim.dir/qobj.cpp.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/qobj.cpp.o: ../qobj.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sim.dir/qobj.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/qobj.cpp.o -c /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/qobj.cpp
+
+CMakeFiles/sim.dir/qobj.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sim.dir/qobj.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/qobj.cpp > CMakeFiles/sim.dir/qobj.cpp.i
+
+CMakeFiles/sim.dir/qobj.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sim.dir/qobj.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/qobj.cpp -o CMakeFiles/sim.dir/qobj.cpp.s
+
 CMakeFiles/sim.dir/ransac.cpp.o: CMakeFiles/sim.dir/flags.make
 CMakeFiles/sim.dir/ransac.cpp.o: ../ransac.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sim.dir/ransac.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sim.dir/ransac.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/ransac.cpp.o -c /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/ransac.cpp
 
 CMakeFiles/sim.dir/ransac.cpp.i: cmake_force
@@ -104,7 +117,7 @@ CMakeFiles/sim.dir/ransac.cpp.s: cmake_force
 
 CMakeFiles/sim.dir/sim.cpp.o: CMakeFiles/sim.dir/flags.make
 CMakeFiles/sim.dir/sim.cpp.o: ../sim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sim.dir/sim.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sim.dir/sim.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/sim.cpp.o -c /Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/sim.cpp
 
 CMakeFiles/sim.dir/sim.cpp.i: cmake_force
@@ -118,6 +131,7 @@ CMakeFiles/sim.dir/sim.cpp.s: cmake_force
 # Object files for target sim
 sim_OBJECTS = \
 "CMakeFiles/sim.dir/gradient.cpp.o" \
+"CMakeFiles/sim.dir/qobj.cpp.o" \
 "CMakeFiles/sim.dir/ransac.cpp.o" \
 "CMakeFiles/sim.dir/sim.cpp.o"
 
@@ -125,6 +139,7 @@ sim_OBJECTS = \
 sim_EXTERNAL_OBJECTS =
 
 sim: CMakeFiles/sim.dir/gradient.cpp.o
+sim: CMakeFiles/sim.dir/qobj.cpp.o
 sim: CMakeFiles/sim.dir/ransac.cpp.o
 sim: CMakeFiles/sim.dir/sim.cpp.o
 sim: CMakeFiles/sim.dir/build.make
@@ -185,7 +200,7 @@ sim: /usr/local/lib/libopencv_photo.4.7.0.dylib
 sim: /usr/local/lib/libopencv_imgproc.4.7.0.dylib
 sim: /usr/local/lib/libopencv_core.4.7.0.dylib
 sim: CMakeFiles/sim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mac/Desktop/QEADynamicPlanning-WS/QEADynamicPlanning/QEADynamicPlanningSim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable sim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

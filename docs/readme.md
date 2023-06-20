@@ -1025,9 +1025,41 @@ cv::waitKey(0);
 ![Alt text](image-3.png)
 ![Alt text](image-4.png)
 
-## 绘制向量场
+## 绘制梯度图像
 
-## 根据向量场矩阵绘制图像
+```c++
+/*
+ * 数学形式：Q = -k * (q / r)
+ */
+class QOBJ
+{
+private:
+    double k = 1; //比例系数
+    double q; //电量
+    double xPos; //在空间中的x坐标
+    double yPos; //在空间中的y坐标
+public:
+    QOBJ() : q{0}, xPos{0}, yPos{0} {}
+    QOBJ(double qValue) : q{qValue}, xPos{0}, yPos{0} {}
+    QOBJ(double qValue, double x, double y) : q{qValue}, xPos{x}, yPos{y} {}
+    ~QOBJ() {}
+
+    double GetValue(double x, double y);
+    double GetValue(double x, double y) const;
+    std::pair<double, double> GetGradient(double x, double y);
+    std::pair<double, double> GetGradient(double x, double y) const;
+};
+```
+```c++
+/*
+ * @brief 获取x，y坐标处的值
+ */
+double QOBJ::GetValue(double x, double y)
+{
+    double r = std::sqrt(std::pow(x - xPos, 2) + std::pow(y - yPos, 2) + 0.0001);
+    return -k * q / r;
+}
+```
 ```c++
 /*
  * @brief 绘制向量
@@ -1048,22 +1080,47 @@ void DrawVector(cv::Mat view, cv::Point start, cv::Vec2f vector, cv::Scalar colo
     cv::circle(view, end, 2, color, -1); //用圆标记向量方向
 }
 ```
-获取向量场的图像
+
 ```c++
 /*
- * @brief 获取向量场的图像
- * @param vecField 向量场
+ * @brief 由qobj生成标量场
+ * @param qobjs 电荷对象
+ * @param fieldSz 场大小
+ * @param scale 缩放
+ * @param offset 偏移
+ */
+cv::Mat GenerateScalarField(const std::vector<QOBJ>& qobjs, cv::Size fieldSz, double scale, cv::Point offset)
+{
+    cv::Mat field = cv::Mat::zeros(fieldSz, CV_32FC1);
+    for (int x = 0; x < field.cols; ++x) {
+        for (int y = 0; y < field.rows; ++y) {
+            int tx = x * scale + offset.x;
+            int ty = y * scale + offset.y;
+            float phi = 0;
+            for (size_t qindex = 0; qindex != qobjs.size(); ++qindex) {
+                phi += qobjs[qindex].GetValue(tx, ty);
+            }
+            field.at<float>(y, x) = phi;
+        }
+    }
+    return field;
+}
+```
+```c++
+/*
+ * @brief 获取梯度图像
+ * @param scalarField 标量场
  * @param color 颜色
  */
-cv::Mat GetVectorFieldView(cv::Mat vecField, cv::Scalar color)
+cv::Mat GetGradientViewFromScalarField(cv::Mat scalarField, cv::Scalar color)
 {
-    cv::Mat view = cv::Mat::zeros(vecField.size(), CV_8UC3);
-    int stepX = view.cols / 20, stepY = view.rows / 20;
+    cv::Mat view = cv::Mat::zeros(scalarField.size(), CV_8UC3);
+    int stepX = view.cols / 30, stepY = view.rows / 30;
 
     for (int x = 0; x < view.cols - 1; x += stepX) {
         for (int y = 0; y < view.rows - 1; y += stepY) {
-            double dx = vecField.at<float>(y, x + 1) - vecField.at<float>(y, x);
-            double dy = vecField.at<float>(y + 1, x) - vecField.at<float>(y, x);
+            double dx = scalarField.at<float>(y, x + 1) - scalarField.at<float>(y, x);
+            double dy = scalarField.at<float>(y + 1, x) - scalarField.at<float>(y, x);
             DrawVector(view, cv::Point(x, y), cv::Vec2f(dx, dy), color, 1);
         }
     }
@@ -1071,23 +1128,20 @@ cv::Mat GetVectorFieldView(cv::Mat vecField, cv::Scalar color)
     return view;
 }
 ```
-测试向量场绘制效果
+验证梯度图像绘制效果
 ```c++
-cv::Mat view = cv::Mat::zeros(cv::Size(512, 512), CV_32FC1);
+QOBJ qobj1(100, 100, 100); //在（100，100）处放置q=100的电荷
+QOBJ qobj2(-100, 300, 300); //在（300，300）处放置q=-100的电荷
+QOBJ qobj3(-400, 200, 400); //在（200，400）处放置q=-400的电荷
+//生成标量场
+cv::Mat field = GenerateScalarField({qobj1, qobj2, qobj3}, cv::Size(512, 512));
+//生成梯度图像
+cv::Mat fieldView = GetGradientViewFromScalarField(field, {0, 255, 0});
 
-//在中心放一个电荷
-double cx = 256, cy = 256;
-for (int x = 0; x < view.cols; ++x) {
-    for (int y = 0; y < view.rows; ++y) {
-        double phi = 40000 / (std::pow(cx - x, 2) + std::pow(cy - y, 2) + 1);
-        view.at<float>(y, x) = (float)phi;
-    }
-}
-cv::Mat fieldView = GetVectorFieldView(view, {0, 255, 0});
-
-cv::imshow("view", view);
+cv::imshow("field", field);
 cv::imshow("fieldView", fieldView);
 cv::waitKey(0);
 ```
-向量场绘制结果:
-![Alt text](image-5.png)
+梯度图像绘制结果
+![Alt text](image-6.png)
+

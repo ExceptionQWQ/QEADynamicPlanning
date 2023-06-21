@@ -76,9 +76,22 @@ include CMakeFiles/qea.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/qea.dir/flags.make
 
+CMakeFiles/qea.dir/gradient.cpp.o: CMakeFiles/qea.dir/flags.make
+CMakeFiles/qea.dir/gradient.cpp.o: ../gradient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/qea.dir/gradient.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/gradient.cpp.o -c /home/pi/QEADynamicPlanningRaspi/gradient.cpp
+
+CMakeFiles/qea.dir/gradient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qea.dir/gradient.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/QEADynamicPlanningRaspi/gradient.cpp > CMakeFiles/qea.dir/gradient.cpp.i
+
+CMakeFiles/qea.dir/gradient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/gradient.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/gradient.cpp -o CMakeFiles/qea.dir/gradient.cpp.s
+
 CMakeFiles/qea.dir/lidar.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/lidar.cpp.o: ../lidar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/qea.dir/lidar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/qea.dir/lidar.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/lidar.cpp.o -c /home/pi/QEADynamicPlanningRaspi/lidar.cpp
 
 CMakeFiles/qea.dir/lidar.cpp.i: cmake_force
@@ -91,7 +104,7 @@ CMakeFiles/qea.dir/lidar.cpp.s: cmake_force
 
 CMakeFiles/qea.dir/mapping.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/mapping.cpp.o: ../mapping.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/qea.dir/mapping.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/qea.dir/mapping.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/mapping.cpp.o -c /home/pi/QEADynamicPlanningRaspi/mapping.cpp
 
 CMakeFiles/qea.dir/mapping.cpp.i: cmake_force
@@ -102,9 +115,22 @@ CMakeFiles/qea.dir/mapping.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/mapping.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/mapping.cpp -o CMakeFiles/qea.dir/mapping.cpp.s
 
+CMakeFiles/qea.dir/planning.cpp.o: CMakeFiles/qea.dir/flags.make
+CMakeFiles/qea.dir/planning.cpp.o: ../planning.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/qea.dir/planning.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/planning.cpp.o -c /home/pi/QEADynamicPlanningRaspi/planning.cpp
+
+CMakeFiles/qea.dir/planning.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qea.dir/planning.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/QEADynamicPlanningRaspi/planning.cpp > CMakeFiles/qea.dir/planning.cpp.i
+
+CMakeFiles/qea.dir/planning.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/planning.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/planning.cpp -o CMakeFiles/qea.dir/planning.cpp.s
+
 CMakeFiles/qea.dir/qea.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/qea.cpp.o: ../qea.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/qea.dir/qea.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/qea.dir/qea.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/qea.cpp.o -c /home/pi/QEADynamicPlanningRaspi/qea.cpp
 
 CMakeFiles/qea.dir/qea.cpp.i: cmake_force
@@ -115,9 +141,35 @@ CMakeFiles/qea.dir/qea.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/qea.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/qea.cpp -o CMakeFiles/qea.dir/qea.cpp.s
 
+CMakeFiles/qea.dir/qobj.cpp.o: CMakeFiles/qea.dir/flags.make
+CMakeFiles/qea.dir/qobj.cpp.o: ../qobj.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/qea.dir/qobj.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/qobj.cpp.o -c /home/pi/QEADynamicPlanningRaspi/qobj.cpp
+
+CMakeFiles/qea.dir/qobj.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qea.dir/qobj.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/QEADynamicPlanningRaspi/qobj.cpp > CMakeFiles/qea.dir/qobj.cpp.i
+
+CMakeFiles/qea.dir/qobj.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/qobj.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/qobj.cpp -o CMakeFiles/qea.dir/qobj.cpp.s
+
+CMakeFiles/qea.dir/ransac.cpp.o: CMakeFiles/qea.dir/flags.make
+CMakeFiles/qea.dir/ransac.cpp.o: ../ransac.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/qea.dir/ransac.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/ransac.cpp.o -c /home/pi/QEADynamicPlanningRaspi/ransac.cpp
+
+CMakeFiles/qea.dir/ransac.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qea.dir/ransac.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/QEADynamicPlanningRaspi/ransac.cpp > CMakeFiles/qea.dir/ransac.cpp.i
+
+CMakeFiles/qea.dir/ransac.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qea.dir/ransac.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/QEADynamicPlanningRaspi/ransac.cpp -o CMakeFiles/qea.dir/ransac.cpp.s
+
 CMakeFiles/qea.dir/robot.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/robot.cpp.o: ../robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/qea.dir/robot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/qea.dir/robot.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/robot.cpp.o -c /home/pi/QEADynamicPlanningRaspi/robot.cpp
 
 CMakeFiles/qea.dir/robot.cpp.i: cmake_force
@@ -130,7 +182,7 @@ CMakeFiles/qea.dir/robot.cpp.s: cmake_force
 
 CMakeFiles/qea.dir/view.cpp.o: CMakeFiles/qea.dir/flags.make
 CMakeFiles/qea.dir/view.cpp.o: ../view.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/qea.dir/view.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/qea.dir/view.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qea.dir/view.cpp.o -c /home/pi/QEADynamicPlanningRaspi/view.cpp
 
 CMakeFiles/qea.dir/view.cpp.i: cmake_force
@@ -143,18 +195,26 @@ CMakeFiles/qea.dir/view.cpp.s: cmake_force
 
 # Object files for target qea
 qea_OBJECTS = \
+"CMakeFiles/qea.dir/gradient.cpp.o" \
 "CMakeFiles/qea.dir/lidar.cpp.o" \
 "CMakeFiles/qea.dir/mapping.cpp.o" \
+"CMakeFiles/qea.dir/planning.cpp.o" \
 "CMakeFiles/qea.dir/qea.cpp.o" \
+"CMakeFiles/qea.dir/qobj.cpp.o" \
+"CMakeFiles/qea.dir/ransac.cpp.o" \
 "CMakeFiles/qea.dir/robot.cpp.o" \
 "CMakeFiles/qea.dir/view.cpp.o"
 
 # External object files for target qea
 qea_EXTERNAL_OBJECTS =
 
+qea: CMakeFiles/qea.dir/gradient.cpp.o
 qea: CMakeFiles/qea.dir/lidar.cpp.o
 qea: CMakeFiles/qea.dir/mapping.cpp.o
+qea: CMakeFiles/qea.dir/planning.cpp.o
 qea: CMakeFiles/qea.dir/qea.cpp.o
+qea: CMakeFiles/qea.dir/qobj.cpp.o
+qea: CMakeFiles/qea.dir/ransac.cpp.o
 qea: CMakeFiles/qea.dir/robot.cpp.o
 qea: CMakeFiles/qea.dir/view.cpp.o
 qea: CMakeFiles/qea.dir/build.make
@@ -211,7 +271,7 @@ qea: /usr/lib/arm-linux-gnueabihf/libopencv_photo.so.4.5.1
 qea: /usr/lib/arm-linux-gnueabihf/libopencv_imgproc.so.4.5.1
 qea: /usr/lib/arm-linux-gnueabihf/libopencv_core.so.4.5.1
 qea: CMakeFiles/qea.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable qea"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/QEADynamicPlanningRaspi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable qea"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qea.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

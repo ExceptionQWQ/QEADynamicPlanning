@@ -142,6 +142,33 @@ qea/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/build
 .PHONY : qea/fast
 
+gradient.o: gradient.cpp.o
+
+.PHONY : gradient.o
+
+# target to build an object file
+gradient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/gradient.cpp.o
+.PHONY : gradient.cpp.o
+
+gradient.i: gradient.cpp.i
+
+.PHONY : gradient.i
+
+# target to preprocess a source file
+gradient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/gradient.cpp.i
+.PHONY : gradient.cpp.i
+
+gradient.s: gradient.cpp.s
+
+.PHONY : gradient.s
+
+# target to generate assembly for a file
+gradient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/gradient.cpp.s
+.PHONY : gradient.cpp.s
+
 lidar.o: lidar.cpp.o
 
 .PHONY : lidar.o
@@ -196,6 +223,33 @@ mapping.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/mapping.cpp.s
 .PHONY : mapping.cpp.s
 
+planning.o: planning.cpp.o
+
+.PHONY : planning.o
+
+# target to build an object file
+planning.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/planning.cpp.o
+.PHONY : planning.cpp.o
+
+planning.i: planning.cpp.i
+
+.PHONY : planning.i
+
+# target to preprocess a source file
+planning.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/planning.cpp.i
+.PHONY : planning.cpp.i
+
+planning.s: planning.cpp.s
+
+.PHONY : planning.s
+
+# target to generate assembly for a file
+planning.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/planning.cpp.s
+.PHONY : planning.cpp.s
+
 qea.o: qea.cpp.o
 
 .PHONY : qea.o
@@ -222,6 +276,60 @@ qea.s: qea.cpp.s
 qea.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/qea.cpp.s
 .PHONY : qea.cpp.s
+
+qobj.o: qobj.cpp.o
+
+.PHONY : qobj.o
+
+# target to build an object file
+qobj.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/qobj.cpp.o
+.PHONY : qobj.cpp.o
+
+qobj.i: qobj.cpp.i
+
+.PHONY : qobj.i
+
+# target to preprocess a source file
+qobj.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/qobj.cpp.i
+.PHONY : qobj.cpp.i
+
+qobj.s: qobj.cpp.s
+
+.PHONY : qobj.s
+
+# target to generate assembly for a file
+qobj.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/qobj.cpp.s
+.PHONY : qobj.cpp.s
+
+ransac.o: ransac.cpp.o
+
+.PHONY : ransac.o
+
+# target to build an object file
+ransac.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/ransac.cpp.o
+.PHONY : ransac.cpp.o
+
+ransac.i: ransac.cpp.i
+
+.PHONY : ransac.i
+
+# target to preprocess a source file
+ransac.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/ransac.cpp.i
+.PHONY : ransac.cpp.i
+
+ransac.s: ransac.cpp.s
+
+.PHONY : ransac.s
+
+# target to generate assembly for a file
+ransac.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qea.dir/build.make CMakeFiles/qea.dir/ransac.cpp.s
+.PHONY : ransac.cpp.s
 
 robot.o: robot.cpp.o
 
@@ -286,15 +394,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... qea"
+	@echo "... gradient.o"
+	@echo "... gradient.i"
+	@echo "... gradient.s"
 	@echo "... lidar.o"
 	@echo "... lidar.i"
 	@echo "... lidar.s"
 	@echo "... mapping.o"
 	@echo "... mapping.i"
 	@echo "... mapping.s"
+	@echo "... planning.o"
+	@echo "... planning.i"
+	@echo "... planning.s"
 	@echo "... qea.o"
 	@echo "... qea.i"
 	@echo "... qea.s"
+	@echo "... qobj.o"
+	@echo "... qobj.i"
+	@echo "... qobj.s"
+	@echo "... ransac.o"
+	@echo "... ransac.i"
+	@echo "... ransac.s"
 	@echo "... robot.o"
 	@echo "... robot.i"
 	@echo "... robot.s"

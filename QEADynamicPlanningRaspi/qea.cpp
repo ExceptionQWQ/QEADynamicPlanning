@@ -3,6 +3,7 @@
 #include "lidar.h"
 #include "view.h"
 #include "mapping.h"
+#include "planning.h"
 
 int main(int argc, char** argv)
 {
@@ -11,8 +12,11 @@ int main(int argc, char** argv)
 	Lidar_Init();
 	Lidar_Start();
 
-
 	sleep(1);
+
+	Planning_Init();
+	Planning_Start();
+
 
 	Mapping mapping(cv::Size(800, 800), {700, 700}, 0.4);
 	mapping.SetColor({0, 255, 0});

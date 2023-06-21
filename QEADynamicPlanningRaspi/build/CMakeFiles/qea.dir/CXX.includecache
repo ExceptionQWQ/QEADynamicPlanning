@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/pi/QEADynamicPlanningRaspi/gradient.h
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
+qobj.h
+/home/pi/QEADynamicPlanningRaspi/qobj.h
+
 /home/pi/QEADynamicPlanningRaspi/lidar.h
 qea.h
 /home/pi/QEADynamicPlanningRaspi/qea.h
@@ -16,15 +22,21 @@ qea.h
 lidar.h
 /home/pi/QEADynamicPlanningRaspi/lidar.h
 
-/home/pi/QEADynamicPlanningRaspi/qea.cpp
+/home/pi/QEADynamicPlanningRaspi/planning.cpp
+planning.h
+/home/pi/QEADynamicPlanningRaspi/planning.h
+
+/home/pi/QEADynamicPlanningRaspi/planning.h
 qea.h
 /home/pi/QEADynamicPlanningRaspi/qea.h
-robot.h
-/home/pi/QEADynamicPlanningRaspi/robot.h
 lidar.h
 /home/pi/QEADynamicPlanningRaspi/lidar.h
-view.h
-/home/pi/QEADynamicPlanningRaspi/view.h
+qobj.h
+/home/pi/QEADynamicPlanningRaspi/qobj.h
+gradient.h
+/home/pi/QEADynamicPlanningRaspi/gradient.h
+robot.h
+/home/pi/QEADynamicPlanningRaspi/robot.h
 mapping.h
 /home/pi/QEADynamicPlanningRaspi/mapping.h
 
@@ -56,19 +68,13 @@ wiringSerial.h
 opencv2/opencv.hpp
 -
 
-/home/pi/QEADynamicPlanningRaspi/robot.cpp
-robot.h
-/home/pi/QEADynamicPlanningRaspi/robot.h
+/home/pi/QEADynamicPlanningRaspi/qobj.h
+qea.h
+/home/pi/QEADynamicPlanningRaspi/qea.h
 
 /home/pi/QEADynamicPlanningRaspi/robot.h
 qea.h
 /home/pi/QEADynamicPlanningRaspi/qea.h
-
-/home/pi/QEADynamicPlanningRaspi/view.h
-qea.h
-/home/pi/QEADynamicPlanningRaspi/qea.h
-lidar.h
-/home/pi/QEADynamicPlanningRaspi/lidar.h
 
 /usr/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
